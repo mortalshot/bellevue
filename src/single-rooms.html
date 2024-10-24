@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Room"
+})
+
+<body class="_header-bg">
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      @@include('html/checkin-widget.htm',{
+      "class":""
+      })
+
+      <section class="room-main">
+        <div class="room-main__container">
+          <div class="room-main__heading">
+            <div class="room-main__breadcrumbs breadcrumbs">
+              <div class="site-breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <span class="site-breadcrumbs__link link-hover" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                  <a href="home.html" itemprop="item">
+                    Home
+                  </a>
+                </span>
+                <span class="site-breadcrumbs__separator">-</span>
+                <span class="site-breadcrumbs__title">Rooms and Suites</span>
+              </div>
+            </div>
+
+            <h2 class="room-main__title">Bellevue Classic Room <br> for Comfortable Experience loremru</h2>
+          </div>
+
+          <div class="room-main__items">
+            <div class="room-main__item">
+              <img src="@img/gallery/gallery-image1.jpg" alt="" loading="lazy">
+            </div>
+            <div class="room-main__item">
+              <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+            </div>
+            <div class="room-main__item">
+              <img src="@img/gallery/gallery-image3.jpg" alt="" loading="lazy">
+            </div>
+          </div>
+
+          <div class="room-main__main">
+            <div class="room-main__text _content">
+              <p>Classic room with a design painted in warm, pastel tones with choice between single, double or twin bedded and in addition you can choose a room with a shower cabin or bathtub. Total number of rooms: 170. Room size: 18m2. Bedding/size: 1*double bed/180*200 cm or 2 single beds/90*200 cm (each)</p>
+            </div>
+
+            <div class="room-main__actions">
+              <div class="room-main__button">
+                <a href="" class="btn btn_bg-yellow">Book now</a>
+                <div class="room-main__note">* With Advantages</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service section-bg" style="background-color: #F3EFDF;">
+        <div class="service__container">
+          <div class="service__heading _content">
+            <h2>Room Service and Amenities</h2>
+          </div>
+
+          <div class="service__items">
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon1.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Free Wi-Fi</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon2.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">TV with International Channels</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon3.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Telephone</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon4.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Air conditioner</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon5.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Writing desk</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon6.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Hairdryer</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon7.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Lighted make up mirror</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon8.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Bathroom with shower or bathtub</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon9.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Heated towel rack</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon10.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Toiletries, slippers</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon11.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Small fridge</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon12.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Tea and coffee making facilities</div>
+            </div>
+            <div class="service__item">
+              <div class="service__icon">
+                <img src="@img/service/service-icon13.svg" alt="" loading="lazy">
+              </div>
+              <div class="service__caption">Room Safe</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="gallery__container">
+          <div class="gallery__slider swiper">
+            <div class="swiper-arrows">
+              <button type="button" class="swiper-arrow swiper-arrow_prev">
+                <svg class="icon">
+                  <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                </svg>
+              </button>
+              <button type="button" class="swiper-arrow swiper-arrow_next">
+                <svg class="icon">
+                  <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="gallery__wrapper swiper-wrapper" data-gallery>
+              <div data-src="@img/gallery/gallery-image1.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image1.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image2.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image3.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image1.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image1.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image2.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image3.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image1.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image1.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image2.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image3.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image1.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image1.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image2.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+              <div data-src="@img/gallery/gallery-image3.jpg" class="gallery__slide swiper-slide">
+                <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <div class="room-main__actions">
+            <div class="room-main__button">
+              <a href="" class="btn btn_bg-yellow">Book now</a>
+              <div class="room-main__note">* With Advantages</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="additional section-bg">
+        <div class="additional__container">
+          <div class="additional__heading">
+            <h2 class="additional__title">Additional Service</h2>
+
+            <div class="swiper-arrows">
+              <button type="button" class="swiper-arrow swiper-arrow_prev">
+                <svg class="icon">
+                  <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                </svg>
+              </button>
+              <button type="button" class="swiper-arrow swiper-arrow_next">
+                <svg class="icon">
+                  <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="additional__slider swiper">
+            <div class="additional__wrapper swiper-wrapper">
+              <div class="additional__slide swiper-slide">
+                <div class="additional__card">
+                  <div class="additional__preview">
+                    <img src="@img/additional/additional-image1.jpg" alt="" loading="lazy">
+                  </div>
+                  <div class="additional__body">
+                    <div class="additional__caption">Fruit basket</div>
+                    <div class="additional__price">
+                      <span>Unit Price:</span>
+                      <div class="additional__value">7 EUR</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="additional__slide swiper-slide">
+                <div class="additional__card">
+                  <div class="additional__preview">
+                    <img src="@img/additional/additional-image2.jpg" alt="" loading="lazy">
+                  </div>
+                  <div class="additional__body">
+                    <div class="additional__caption">Bottle of house wine (white/red)</div>
+                    <div class="additional__price">
+                      <span>Unit Price:</span>
+                      <div class="additional__value">18 EUR</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="additional__slide swiper-slide">
+                <div class="additional__card">
+                  <div class="additional__preview">
+                    <img src="@img/additional/additional-image3.jpg" alt="" loading="lazy">
+                  </div>
+                  <div class="additional__body">
+                    <div class="additional__caption">Visit of Wellness area</div>
+                    <div class="additional__price">
+                      <span>Unit Price:</span>
+                      <div class="additional__value">12 EUR</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="additional__slide swiper-slide">
+                <div class="additional__card">
+                  <div class="additional__preview">
+                    <img src="@img/additional/additional-image4.jpg" alt="" loading="lazy">
+                  </div>
+                  <div class="additional__body">
+                    <div class="additional__caption">Pet Policy</div>
+                    <div class="additional__price">
+                      <span>Unit Price:</span>
+                      <div class="additional__value">25 EUR</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="additional__slide swiper-slide">
+                <div class="additional__card">
+                  <div class="additional__preview">
+                    <img src="@img/additional/additional-image3.jpg" alt="" loading="lazy">
+                  </div>
+                  <div class="additional__body">
+                    <div class="additional__caption">Visit of Wellness area</div>
+                    <div class="additional__price">
+                      <span>Unit Price:</span>
+                      <div class="additional__value">12 EUR</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/rooms-suites.htm',{})
+
+      @@include('html/features-tabs.htm',{})
+
+      @@include('html/widget-map.htm',{})
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

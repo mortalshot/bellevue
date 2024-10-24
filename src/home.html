@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Home"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="firstscreen _first-section-bg">
+				<div class="firstscreen__slider swiper">
+					<div class="firstscreen__wrapper swiper-wrapper">
+						<div class="firstscreen__slide swiper-slide">
+							<div class="firstscreen__bg _bg">
+								<img src="@img/firstscreen/firstscreen1-bg.jpg" alt="" loading="lazy">
+							</div>
+
+							<div class="firstscreen__container">
+								<div class="firstscreen__body">
+									<div class="firstscreen__text _content">
+										<h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+									</div>
+
+									<div class="firstscreen__button">
+										<a href="" class="btn btn_big btn_bg-yellow">Book now</a>
+									</div>
+
+									<div class="firstscreen__items feature-cards">
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card1-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Best Price Guaranteeea</div>
+										</div>
+
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card2-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Welcome Gift</div>
+										</div>
+
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card3-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Free Update Upon Availability</div>
+										</div>
+
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card4-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Free Parking</div>
+										</div>
+
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card5-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Free Cancelation or Changes</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="firstscreen__slide swiper-slide">
+							<div class="firstscreen__bg _bg">
+								<img src="@img/firstscreen/firstscreen2-bg.jpg" alt="" loading="lazy">
+							</div>
+
+							<div class="firstscreen__container">
+								<div class="firstscreen__body">
+									<div class="firstscreen__text _content">
+										<h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+									</div>
+
+									<div class="firstscreen__button">
+										<a href="" class="btn btn_big btn_bg-yellow">Book now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="firstscreen__slide swiper-slide">
+							<div class="firstscreen__bg _bg">
+								<img src="@img/firstscreen/firstscreen3-bg.jpg" alt="" loading="lazy">
+							</div>
+
+							<div class="firstscreen__container">
+								<div class="firstscreen__body">
+									<div class="firstscreen__text _content">
+										<h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+									</div>
+
+									<div class="firstscreen__button">
+										<a href="" class="btn btn_big btn_bg-yellow">Book now</a>
+									</div>
+
+									<div class="firstscreen__items feature-cards">
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card1-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Best Price Guaranteeea</div>
+										</div>
+
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card2-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Welcome Gift</div>
+										</div>
+
+										<div class="feature-cards__item">
+											<div class="feature-cards__icon">
+												<img src="@img/firstscreen/feature-card3-icon.svg" alt="" loading="lazy">
+											</div>
+											<div class="feature-cards__caption">Free Update Upon Availability</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-pagination"></div>
+				</div>
+
+				@@include('html/checkin-widget.htm',{
+					"class":"firstscreen__checkin"
+				})
+			</section>
+
+			<section class="special-offers section-bg">
+				<div class="special-offers__container">
+					<div class="special-offers__heading">
+						<h2 class="special-offers__title">Special Offers</h2>
+
+						<div class="swiper-arrows">
+							<button type="button" class="swiper-arrow swiper-arrow_prev">
+								<svg class="icon">
+									<use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+								</svg>
+							</button>
+							<button type="button" class="swiper-arrow swiper-arrow_next">
+								<svg class="icon">
+									<use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="special-offers__slider swiper">
+						<div class="special-offers__wrapper swiper-wrapper">
+							<div class="special-offers__slide swiper-slide">
+								<div class="offers-card">
+									<div class="offers-card__image">
+										<img src="@img/special-offers/special-offers-image1.jpg" alt="" loading="lazy">
+										<div class="offers-card__caption title-h4">Family Offer</div>
+									</div>
+
+									<div class="offers-card__body">
+										<div class="offers-card__title title-h4">Family Offer</div>
+										<div class="offers-card__text _content">
+											<ul>
+												<li>1 Night in a Spacious Family Room</li>
+												<li>Delicious Buffet Breakfast</li>
+												<li>3-Course Lunch for Two at "Park" Restaurant</li>
+												<li>Welcome Drink</li>
+												<li>Complimentary WiFi</li>
+												<li>Fitness Room Access</li>
+												<li>Free Parking</li>
+											</ul>
+										</div>
+										<div class="offers-card__prices">
+											<div class="offers-card__subtitle">Special Prices:</div>
+
+											<div class="offers-card__item">
+												<span>1 Child (up to 13 years old):</span>
+												<div class="offers-card__price">155 EUR</div>
+											</div>
+
+											<div class="offers-card__item">
+												<span>2 Children** (up to 13 years old):</span>
+												<div class="offers-card__price">175 EUR</div>
+											</div>
+										</div>
+										<div class="offers-card__actions">
+											<div class="offers-card__button">
+												<a href="" class="btn btn_border-yellow">View More</a>
+											</div>
+
+											<div class="offers-card__button">
+												<a href="" class="btn btn_bg-yellow">Book now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="special-offers__slide swiper-slide">
+								<div class="offers-card">
+									<div class="offers-card__image">
+										<img src="@img/special-offers/special-offers-image2.jpg" alt="" loading="lazy">
+										<div class="offers-card__caption title-h4">Bellevue Gift Card</div>
+									</div>
+
+									<div class="offers-card__body">
+										<div class="offers-card__title title-h4">Bellevue Gift Card</div>
+										<div class="offers-card__text _content">
+											<ul>
+												<li>1 Night in a Spacious Family Room</li>
+												<li>Delicious Buffet Breakfast</li>
+												<li>3-Course Lunch for Two at "Park" Restaurant</li>
+												<li>Welcome Drink</li>
+												<li>Complimentary WiFi</li>
+												<li>Fitness Room Access</li>
+												<li>Free Parking</li>
+											</ul>
+										</div>
+										<div class="offers-card__prices">
+											<div class="offers-card__subtitle">Special Prices:</div>
+
+											<div class="offers-card__item">
+												<span>1 Child (up to 13 years old):</span>
+												<div class="offers-card__price">155 EUR</div>
+											</div>
+
+											<div class="offers-card__item">
+												<span>2 Children** (up to 13 years old):</span>
+												<div class="offers-card__price">175 EUR</div>
+											</div>
+										</div>
+										<div class="offers-card__actions">
+											<div class="offers-card__button">
+												<a href="" class="btn btn_border-yellow">View More</a>
+											</div>
+
+											<div class="offers-card__button">
+												<a href="" class="btn btn_bg-yellow">Book now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="special-offers__slide swiper-slide">
+								<div class="offers-card">
+									<div class="offers-card__image">
+										<img src="@img/special-offers/special-offers-image2.jpg" alt="" loading="lazy">
+										<div class="offers-card__caption title-h4">Bellevue Gift Card</div>
+									</div>
+
+									<div class="offers-card__body">
+										<div class="offers-card__title title-h4">Bellevue Gift Card</div>
+										<div class="offers-card__text _content">
+											<ul>
+												<li>1 Night in a Spacious Family Room</li>
+												<li>Delicious Buffet Breakfast</li>
+												<li>3-Course Lunch for Two at "Park" Restaurant</li>
+												<li>Welcome Drink</li>
+												<li>Complimentary WiFi</li>
+												<li>Fitness Room Access</li>
+												<li>Free Parking</li>
+											</ul>
+										</div>
+										<div class="offers-card__prices">
+											<div class="offers-card__subtitle">Special Prices:</div>
+
+											<div class="offers-card__item">
+												<span>1 Child (up to 13 years old):</span>
+												<div class="offers-card__price">155 EUR</div>
+											</div>
+
+											<div class="offers-card__item">
+												<span>2 Children** (up to 13 years old):</span>
+												<div class="offers-card__price">175 EUR</div>
+											</div>
+										</div>
+										<div class="offers-card__actions">
+											<div class="offers-card__button">
+												<a href="" class="btn btn_border-yellow">View More</a>
+											</div>
+
+											<div class="offers-card__button">
+												<a href="" class="btn btn_bg-yellow">Book now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			@@include('html/rooms-suites.htm',{})
+			
+			@@include('html/features-tabs.htm',{})
+			
+			@@include('html/widget-map.htm',{})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+//<BUTTONS (a.btn+tab)>
+// Сниппет (HTML): btn
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: toRem(16);
+	border-radius: toRem(2);
+	border: toRem(1) solid transparent;
+	overflow: hidden;
+	font-family: $fontSecond;
+	font-weight: 700;
+	font-size: toRem(18);
+	line-height: math.div(22, 18);
+	padding: toRem(12) toRem(20);
+	min-height: toRem(50);
+	outline: 0;
+	min-width: toRem(161);
+	border-radius: toRem(2);
+
+	@media (max-width: $mobileSmall) {
+		width: 100%;
+	}
+
+	// .btn_big
+	&_big {
+		padding-top: toRem(4);
+		padding-bottom: toRem(4);
+		min-height: toRem(62);
+		min-width: toRem(177);
+
+		@media (min-width: $mobile) {
+			@include adaptiveValue("min-height", 62, 55, 0, 1320, 834);
+		}
+	}
+
+	// .btn_border-white
+	&_border-white {
+		border: toRem(1) solid $White;
+		color: $White;
+		transition: $transition ease all 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $White;
+				color: $mainColor;
+			}
+		}
+	}
+
+	// .btn_border-yellow
+	&_border-yellow {
+		border: toRem(1) solid #ead798;
+		color: $mainColor;
+		transition: $transition ease all 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #e1d3a6;
+			}
+		}
+	}
+
+	// .btn_bg-yellow
+	&_bg-yellow {
+		background-color: #ead798;
+		color: $mainColor;
+
+		@media (any-hover: hover) {
+			transition: $transition ease opacity 0s;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}
