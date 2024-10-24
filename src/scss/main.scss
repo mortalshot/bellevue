@@ -370,6 +370,7 @@
         text-decoration: underline from-font;
         text-underline-offset: 3px;
         transition: $transition ease text-decoration 0s;
+        background-color: initial !important;
 
         @media (any-hover: hover) {
           &:hover {

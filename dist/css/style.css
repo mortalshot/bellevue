@@ -4075,7 +4075,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-text-decoration: underline from-font;
     text-decoration: underline from-font;
     text-underline-offset: 3px;
-    transition: .3s ease text-decoration 0s
+    transition: .3s ease text-decoration 0s;
+    background-color: initial!important
   }
   .rooms-suites__slider {
     padding: 0 1.875rem
