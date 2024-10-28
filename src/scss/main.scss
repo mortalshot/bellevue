@@ -1,4 +1,54 @@
 // .firstscreen     ====================================================================================================
+.inner-first {
+  position: relative;
+  margin-top: calc(var(--header-height) * (-1)) !important;
+
+  // .inner-first__bg
+  &__bg {
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      background-color: rgba($color: #2a251f, $alpha: 0.5);
+      pointer-events: none;
+    }
+  }
+
+  // .inner-first__container
+  &__container {
+    padding-top: calc(var(--header-height) + toRem(36));
+    padding-bottom: toRem(100);
+    min-height: toRem(377);
+    position: relative;
+    z-index: 2;
+    color: $White;
+    display: grid;
+    align-content: center;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue("padding-bottom", 100, 64, 0, 834, 375);
+    }
+  }
+
+  // .inner-first__body
+  &__body {
+  }
+
+  // .inner-first__text
+  &__text {
+  }
+
+  .checkin-widget {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 ._first-section-bg {
   margin: 0;
 
@@ -7,6 +57,8 @@
 }
 
 .firstscreen {
+  position: relative;
+
   // .firstscreen__slider
   &__slider {
     margin-top: calc(var(--header-height) * (-1));
@@ -163,6 +215,9 @@
 
 .checkin-widget {
   color: $White;
+  position: sticky;
+  z-index: 6;
+  top: 0;
 
   .spollers__title {
     @media (min-width: $tablet) {
@@ -177,8 +232,11 @@
   }
 
   &._active {
+    z-index: 10;
+
     .checkin-widget__body {
       opacity: 1;
+      z-index: 11;
     }
   }
 
@@ -194,6 +252,10 @@
     display: grid;
     align-content: center;
     @include adaptiveValue("min-height", 131, 106, 0, 1320, 1024);
+
+    .spollers__title {
+      z-index: 1;
+    }
   }
 
   // .checkin-widget__body
@@ -207,7 +269,6 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 11;
       padding-top: toRem(18);
       padding-bottom: toRem(18);
       background: url(../img/firstscreen/checkin-bg_tabl.jpg) no-repeat center/cover;
@@ -229,6 +290,9 @@
     padding: toRem(8);
 
     @media (min-width: $tablet) {
+      display: none;
+    }
+    @media (max-width: $mobile) {
       display: none;
     }
   }
@@ -651,6 +715,7 @@
 }
 
 // .rooms-suites     ====================================================================================================
+
 .rooms-suites {
   // .rooms-suites__container
   &__container {
@@ -661,18 +726,6 @@
 
   // .rooms-suites__title
   &__title {
-    font-style: italic;
-    line-height: 1;
-    color: #f3efdf;
-    text-align: center;
-
-    @media (min-width: $mobile) {
-      @include adaptiveValue("font-size", 190, 110, 0, 1320, 834);
-    }
-    @media (max-width: $mobile) {
-      @include adaptiveValue("font-size", 110, 70, 0, 834, 375);
-    }
-
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 64, 48, 0, 1024, 834);
     }
@@ -1088,9 +1141,6 @@
 // .widget-map     ====================================================================================================
 .widget-map {
   aspect-ratio: 375 / 265;
-  max-width: toRem(1920);
-  margin-left: auto !important;
-  margin-right: auto !important;
   position: relative;
 
   @media (min-width: $mobileM) {
@@ -1288,6 +1338,154 @@
         text-decoration: underline from-font;
       }
     }
+  }
+}
+
+// .room-card     ====================================================================================================
+.room-card {
+  position: relative;
+
+  // .room-card__container
+  &__container {
+  }
+
+  // .room-card__items
+  &__items {
+  }
+
+  // .room-card__item
+  &__item {
+    position: relative;
+
+    &::before {
+      @media (min-width: $mobile) {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 300%;
+        background-color: var(--item-color);
+        z-index: -1;
+      }
+    }
+
+    @media (min-width: $mobile) {
+      &:nth-child(2n-1) {
+        &::before {
+          transform: translateX(100%);
+          @include adaptiveValue("right", 324, 64, 0, 1920, 824);
+        }
+
+        .room-card__gallery {
+          grid-template-columns: percent(424, 1320) 1fr;
+        }
+
+        .room-card__image {
+          &:nth-child(1) {
+            @include adaptiveValue("margin-bottom", 54, 16, 0, 1920, 824);
+          }
+        }
+
+        .room-card__body {
+          left: percent(226, 1320);
+        }
+      }
+      &:nth-child(2n) {
+        &::before {
+          transform: translateX(-100%);
+          @include adaptiveValue("left", 324, 64, 0, 1920, 824);
+        }
+
+        .room-card__gallery {
+          grid-template-columns: 1fr percent(424, 1320);
+        }
+
+        .room-card__image {
+          &:nth-child(2) {
+            @include adaptiveValue("margin-bottom", 54, 16, 0, 1920, 824);
+          }
+        }
+
+        .room-card__body {
+          right: percent(226, 1320);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      @media (min-width: $mobile) {
+        margin-bottom: toRem(64);
+      }
+      @media (max-width: $mobile) {
+        padding-bottom: toRem(32);
+        border-bottom: toRem(1) solid #e1ded3;
+        margin-bottom: toRem(40);
+      }
+    }
+  }
+
+  // .room-card__gallery
+  &__gallery {
+    @media (min-width: $mobile) {
+      display: grid;
+      align-items: flex-end;
+      @include adaptiveValue("gap", 26, 12, 0, 1320, 1024);
+      padding-top: toRem(40);
+      padding-bottom: toRem(40);
+    }
+  }
+
+  // .room-card__image
+  &__image {
+    @media (max-width: $mobile) {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      aspect-ratio: 335/240;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // .room-card__body
+  &__body {
+    width: 100%;
+
+    @media (min-width: $mobile) {
+      padding: toRem(32) toRem(36);
+      background-color: var(--item-color);
+      max-width: toRem(444);
+      position: absolute;
+      top: 0;
+    }
+    @media (max-width: $mobile) {
+      padding-top: toRem(16);
+    }
+  }
+
+  // .room-card__title
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 16, 4, 0, 834, 375);
+    }
+  }
+
+  // .room-card__text
+  &__text {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 36, 20, 0, 834, 375);
+    }
+  }
+
+  // .room-card__button
+  &__button {
   }
 }
 
@@ -1690,6 +1888,254 @@
     line-height: math.div(23, 18);
     white-space: nowrap;
     @include adaptiveValue("font-size", 18, 14, 0, 834, 375);
+  }
+}
+
+// .inner-contacts     ====================================================================================================
+.inner-contacts {
+  position: relative;
+
+  @media (min-width: $mobile) {
+    @include adaptiveValue("padding-top", 100, 40);
+    @include adaptiveValue("padding-bottom", 100, 40);
+  }
+  @media (max-width: $mobile) {
+    @include adaptiveValue("margin-top", 100, 40);
+    @include adaptiveValue("margin-bottom", 100, 40);
+  }
+
+  &::before {
+    @media (min-width: $mobile) {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 300%;
+      background-color: #f3efdf;
+      position: absolute;
+      top: 0;
+      transform: translateX(100%);
+      z-index: -1;
+      @include adaptiveValue("right", 510, 450, 0, 1024, 834);
+    }
+    @media (min-width: $tablet) {
+      right: toRem(470);
+    }
+    @media (min-width: $pc) {
+      @include adaptiveValue("right", 840, 540, 0, 1920, 1380);
+    }
+  }
+
+  // .inner-contacts__container
+  &__container {
+  }
+
+  // .inner-contacts__row
+  &__row {
+    display: grid;
+    justify-content: space-between;
+    gap: toRem(20);
+    @include adaptiveValue("column-gap", 100, 40, 0, 1380, 1024);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr toRem(409);
+    }
+    @media (min-width: $pc) {
+      grid-template-columns: percent(689, 1320) percent(476, 1320);
+    }
+  }
+
+  // .inner-contacts__left
+  &__left {
+  }
+
+  // .inner-contacts__text
+  &__text {
+  }
+
+  // .inner-contacts__right
+  &__right {
+    position: relative;
+  }
+
+  // .inner-contacts__items
+  &__items {
+    display: grid;
+    align-content: flex-start;
+    row-gap: toRem(32);
+
+    @media (max-width: $mobile) {
+      justify-content: flex-start;
+      row-gap: toRem(20);
+    }
+  }
+}
+
+.contacts-card {
+  display: grid;
+  grid-template-columns: toRem(110) 1fr;
+  background-color: $White;
+  padding: toRem(28) toRem(32);
+  @include adaptiveValue("padding-left", 32, 20, 0, 1920, 1380);
+  @include adaptiveValue("padding-right", 32, 20, 0, 1920, 1380);
+  @include adaptiveValue("column-gap", 28, 16);
+
+  @media (max-width: $mobile) {
+    background-color: #f3efdf;
+  }
+  @media (max-width: $mobileSmall) {
+    grid-template-columns: percent(84, 295) 1fr;
+  }
+
+  // .contacts-card__avatar
+  &__avatar {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .contacts-card__body
+  &__body {
+    display: grid;
+    align-content: flex-start;
+    row-gap: toRem(4);
+  }
+
+  // .contacts-card__name
+  &__name {
+    font-family: $fontSecond;
+  }
+
+  // .contacts-card__contacts
+  &__contacts {
+    display: grid;
+    align-content: flex-start;
+    row-gap: toRem(4);
+  }
+
+  // .contacts-card__contact
+  &__contact {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: toRem(8);
+
+      span {
+        text-decoration: underline transparent from-font;
+        text-underline-offset: 3px;
+        transition: $transition ease text-decoration 0s;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          span {
+            text-decoration: underline from-font;
+          }
+        }
+      }
+    }
+
+    svg {
+      flex: 0 0 toRem(18);
+    }
+  }
+}
+
+// .conference-room     ====================================================================================================
+.conference-room {
+  // .conference-room__container
+  &__container {
+  }
+
+  // .conference-room__title
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(44);
+    }
+  }
+
+  // .conference-room__items
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 30, 16, 0, 1380, 1024);
+
+    @media (min-width: $mobileM) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // .conference-room__card
+  &__card {
+  }
+
+  // .conference-room__preview
+  &__preview {
+    aspect-ratio: 420 / 250;
+
+    @media (max-width: $mobileM) {
+      aspect-ratio: 335 / 215;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .conference-room__body
+  &__body {
+    padding: toRem(18) toRem(32);
+    background-color: #f3efdf;
+    display: grid;
+    align-content: flex-start;
+    row-gap: toRem(16);
+    @include adaptiveValue("padding-left", 32, 20, 0, 1380, 1024);
+    @include adaptiveValue("padding-right", 32, 20, 0, 1380, 1024);
+  }
+
+  // .conference-room__heading
+  &__heading {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: toRem(16);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: 1fr toRem(154);
+    }
+  }
+
+  // .conference-room__caption
+  &__caption {
+    font-family: $fontSecond;
+  }
+
+  // .conference-room__text
+  &__text {
+    text-align: right;
+    line-height: math.div(23, 15);
+    @include adaptiveValue("font-size", 15, 13);
+  }
+
+  // .conference-room__button
+  &__button {
+    .btn {
+      width: 100%;
+    }
   }
 }
 //====================================================================================================

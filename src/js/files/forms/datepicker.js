@@ -7,7 +7,7 @@ import { flsModules } from "../modules.js";
 // Подключение модуля
 import datepicker from 'js-datepicker';
 
-if (document.querySelector('#checkin') && document.querySelector('#checkin')) {
+if (document.querySelector('#checkin') && document.querySelector('#checkout')) {
 	var currentDate = new Date();
 	var nextDay = new Date(currentDate);
 	nextDay.setDate(currentDate.getDate() + 1);

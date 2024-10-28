@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Archive Rooms"
+})
+
+<body class="">
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <section class="inner-first _first-section-bg">
+        <div class="inner-first__bg _bg">
+          <img src="@img/firstscreen/inner-first1.jpg" alt="" loading="lazy">
+        </div>
+
+        <div class="inner-first__container">
+          <div class="inner-first__body">
+            <div class="inner-first__text _content">
+              <h1 style="text-align: center;">Discover our Rooms</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/checkin-widget.htm',{
+      "class":"firstscreen__checkin"
+      })
+
+      <section class="room-card">
+        <div class="room-card__container">
+          <div class="room-card__items">
+            <div class="room-card__item" style="--item-color: #F3EFDF">
+              <div class="room-card__gallery">
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image1.jpg" alt="" loading="lazy">
+                </div>
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image2.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+
+              <div class="room-card__body">
+                <h3 class="room-card__title">Classic</h3>
+
+                <div class="room-card__text _content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis nibh enim</p>
+                </div>
+
+                <div class="room-card__button">
+                  <a href="" class="btn btn_bg-yellow">Explore</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="room-card__item" style="--item-color: #EAD798">
+              <div class="room-card__gallery">
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image3.jpg" alt="" loading="lazy">
+                </div>
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image4.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+
+              <div class="room-card__body">
+                <h3 class="room-card__title">Apartment Room with Kitchenette</h3>
+
+                <div class="room-card__text _content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis nibh enim</p>
+                </div>
+
+                <div class="room-card__button">
+                  <a href="" class="btn btn_bg-yellow2">Explore</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="room-card__item" style="--item-color: #F3EFDF">
+              <div class="room-card__gallery">
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image1.jpg" alt="" loading="lazy">
+                </div>
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image2.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+
+              <div class="room-card__body">
+                <h3 class="room-card__title">Classic</h3>
+
+                <div class="room-card__text _content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis nibh enim</p>
+                </div>
+
+                <div class="room-card__button">
+                  <a href="" class="btn btn_bg-yellow">Explore</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="room-card__item" style="--item-color: #EAD798">
+              <div class="room-card__gallery">
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image3.jpg" alt="" loading="lazy">
+                </div>
+                <div class="room-card__image">
+                  <img src="@img/gallery/room-image4.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+
+              <div class="room-card__body">
+                <h3 class="room-card__title">Apartment Room with Kitchenette</h3>
+
+                <div class="room-card__text _content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis nibh enim</p>
+                </div>
+
+                <div class="room-card__button">
+                  <a href="" class="btn btn_bg-yellow2">Explore</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/features-tabs.htm',{})
+
+      @@include('html/widget-map.htm',{})
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

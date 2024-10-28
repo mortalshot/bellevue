@@ -24,6 +24,13 @@ body::after {
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
+
+	// .popup_bottom
+	&_bottom {
+		.popup__wrapper {
+			justify-content: flex-end;
+		}
+	}
 }
 .popup_show {
 	z-index: 150;
@@ -54,8 +61,70 @@ body::after {
 	padding: 20px;
 	width: 100%;
 	max-width: 900px;
-	border-radius: 20px;
+	border-radius: toRem(2);
+	overflow: hidden;
+
 	.lock & {
 		visibility: visible;
+	}
+}
+
+.popup_cookie {
+	.popup__content {
+		padding: 0;
+		max-width: toRem(1320);
+
+		box-shadow:
+			0 4px 4px 0 rgba(0, 0, 0, 0.3),
+			0 8px 12px 6px rgba(0, 0, 0, 0.15);
+	}
+}
+
+.cookie {
+	position: relative;
+
+	// .cookie__bg
+	&__bg {
+		img {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .cookie__content
+	&__content {
+		padding: toRem(32);
+
+		@media (min-width: $mobile) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: toRem(64);
+		}
+	}
+
+	// .cookie__text
+	&__text {
+		flex: 1;
+		font-size: toRem(14);
+		line-height: math.div(20, 14);
+	}
+
+	// .cookie__actions
+	&__actions {
+		@media (max-width: $mobile) {
+			&:not(:first-child) {
+				margin-top: toRem(24);
+			}
+		}
+	}
+
+	// .cookie__button
+	&__button {
 	}
 }

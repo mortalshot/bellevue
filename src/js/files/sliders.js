@@ -332,6 +332,51 @@ function initSliders() {
 			}
 		});
 	}
+
+	if (document.querySelector('.room-popup__slider')) {
+		new Swiper('.room-popup__slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 24,
+			speed: 1000,
+			loop: false,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/* pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			}, */
+
+			/* navigation: {
+				prevEl: '.room-popup__slider .swiper-arrow_prev',
+				nextEl: '.room-popup__slider .swiper-arrow_next',
+			}, */
+
+			// Брейкпоинты
+			/* breakpoints: {
+				575: {
+					slidesPerView: 2.5,
+					spaceBetween: 12,
+				},
+			}, */
+
+			// События
+			on: {
+
+			}
+		});
+	}
 }
 //Скролл на базе слайдера (по классу swiper scroll для оболочки слайдера)
 function initSlidersScroll() {

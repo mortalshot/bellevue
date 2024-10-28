@@ -283,7 +283,7 @@
 		align-content: flex-start;
 		gap: toRem(12);
 
-		@media (min-width: $mobileSmall) {
+		@media (min-width: $mobileM) {
 			justify-content: flex-start;
 		}
 

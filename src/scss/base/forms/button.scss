@@ -75,4 +75,17 @@
 			}
 		}
 	}
+
+	// .btn_bg-yellow2
+	&_bg-yellow2 {
+		background-color: #f3efdf;
+		color: $mainColor;
+
+		@media (any-hover: hover) {
+			transition: $transition ease opacity 0s;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
 }

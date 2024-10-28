@@ -32,6 +32,20 @@ h,
   }
 }
 
+.title-style1 {
+  font-style: italic;
+  line-height: 1;
+  color: #f3efdf;
+  text-align: center;
+
+  @media (min-width: $mobile) {
+    @include adaptiveValue("font-size", 170, 110, 0, 1320, 834);
+  }
+  @media (max-width: $mobile) {
+    @include adaptiveValue("font-size", 110, 70, 0, 834, 375);
+  }
+}
+
 hr {
   border-bottom: toRem(1) solid rgba($color: $White, $alpha: 0.5);
   margin-top: toRem(20);
@@ -48,10 +62,9 @@ video {
 section {
   @include adaptiveValue("margin-top", 80, 40);
   @include adaptiveValue("margin-bottom", 80, 40);
-
-  &.section-bg {
-    margin: 0;
-  }
+}
+.section-bg {
+  margin: 0;
 }
 
 .icon {
