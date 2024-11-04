@@ -109,6 +109,11 @@ section {
     min-height: toRem(1);
   }
 
+  .text-big {
+    line-height: math.div(22, 14);
+    @include adaptiveValue("font-size", 20, 14);
+  }
+
   ol {
     counter-reset: item;
 
@@ -384,7 +389,7 @@ section {
     pointer-events: none;
     transform: translateX(200%);
     transition: 0.5s ease all 0s;
-    @include adaptiveValue("right", 140, 20, 0, 1920, 375);
+    @include adaptiveValue("right", 40, 20, 0, 1920, 375);
     @include adaptiveValue("bottom", 140, 20, 0, 1920, 375);
 
     ._show & {

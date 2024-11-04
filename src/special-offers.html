@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Special Offers"
+})
+
+<body class="_header-bg">
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      @@include('html/checkin-widget.htm',{
+      "class":""
+      })
+
+      <section class="text-image">
+        <div class="text-image__container">
+          <div class="text-image__heading">
+            <div class="room-main__breadcrumbs breadcrumbs">
+              <div class="site-breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <span class="site-breadcrumbs__link link-hover" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                  <a href="home.html" itemprop="item">
+                    Home
+                  </a>
+                </span>
+                <span class="site-breadcrumbs__separator">-</span>
+                <span class="site-breadcrumbs__title">Special Offers</span>
+              </div>
+            </div>
+
+            <h2 class="room-main__title">Bellevue Special Offers</h2>
+          </div>
+
+          <div class="text-image__item">
+            <div class="text-image__body">
+              <h3 class="text-image__caption">Gift a Memorable Moments to Your Loved Ones</h3>
+              <div class="text-image__text _content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex magna, lacinia ac interdum sed, mattis sit amet lorem. Praesent eget mi vestibulum, sodales diam eget, imperdiet justo. Vivamus id lorem ut enim pellentesque efficitur. </p>
+              </div>
+              <div class="text-image__button">
+                <a href="" class="btn btn_bg-yellow">Explore</a>
+              </div>
+            </div>
+
+            <div class="text-image__image">
+              <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/special-offers.htm',{})
+
+      @@include('html/widget-map.htm',{})
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

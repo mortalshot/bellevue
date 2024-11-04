@@ -3,7 +3,7 @@ import { isMobile, removeClasses } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
-const menu = document.querySelector('.header__menu');
+const menu = document.querySelector('.menu__body');
 if (menu && window.innerWidth >= 768 && !isMobile.any()) {
   menu.addEventListener('mouseenter', function (e) {
     document.documentElement.classList.add('menu-open');
@@ -41,7 +41,7 @@ document.addEventListener('click', function (e) {
     const closest = targetElement.closest('.checkin-widget');
     closest.classList.remove('_active');
   }
-  if (!targetElement.closest('.checkin-widget')) {
+  if (document.querySelector('.checkin-widget') && !targetElement.closest('.checkin-widget')) {
     document.querySelector('.checkin-widget').classList.remove('_active');
   }
 })
@@ -63,13 +63,26 @@ if (above) {
   });
 }
 
+const checkinWidget = document.querySelector('.checkin-widget');
+if (checkinWidget) {
+  window.addEventListener('scroll', function () {
+    const rect = checkinWidget.getBoundingClientRect();
+
+    if (rect.top === 0) {
+      checkinWidget.classList.add('_sticky');
+    } else {
+      checkinWidget.classList.remove('_sticky');
+    }
+  });
+}
+
 window.addEventListener('DOMContentLoaded', function () {
   const firstscreen = document.querySelector('._first-section-bg');
   setTimeout(() => {
     if (firstscreen) {
       showHeaderHeight();
     }
-  }, 300);
+  }, 400);
 })
 
 window.addEventListener('resize', function () {

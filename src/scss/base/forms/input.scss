@@ -9,7 +9,7 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
+	border-radius: toRem(2) !important;
 	width: 100%;
 	display: block;
 	padding: toRem(8) 0;
@@ -30,6 +30,13 @@ textarea {
 			color: rgba($color: $White, $alpha: 0.5);
 		}
 	}
+
+	// .input_bg-white
+	&_bg-white {
+		background-color: $White;
+		min-height: toRem(45);
+		padding: toRem(8) toRem(16);
+	}
 }
 
 .input[placeholder]:not([data-placeholder-nohiden]) {
@@ -43,5 +50,4 @@ textarea {
 
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
 }

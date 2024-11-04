@@ -25,6 +25,31 @@ body::after {
 	visibility: hidden;
 	pointer-events: none;
 
+	// .popup__close
+	&__close {
+		position: absolute;
+		top: toRem(10);
+		right: toRem(10);
+		padding: toRem(10);
+		margin: toRem(-10);
+
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		svg {
+			flex: 0 0 toRem(10);
+			width: toRem(10);
+			height: toRem(10);
+			fill: #000;
+			transition: $transition ease transform 0s;
+		}
+	}
+
 	// .popup_bottom
 	&_bottom {
 		.popup__wrapper {
@@ -58,11 +83,14 @@ body::after {
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
 	background-color: #eee;
-	padding: 20px;
 	width: 100%;
-	max-width: 900px;
+	max-width: toRem(1320);
 	border-radius: toRem(2);
 	overflow: hidden;
+	@include adaptiveValue("padding-top", 56, 32, 0, 1380, 1024);
+	@include adaptiveValue("padding-bottom", 56, 32, 0, 1380, 1024);
+	@include adaptiveValue("padding-left", 32, 16);
+	@include adaptiveValue("padding-right", 32, 16);
 
 	.lock & {
 		visibility: visible;
@@ -72,7 +100,6 @@ body::after {
 .popup_cookie {
 	.popup__content {
 		padding: 0;
-		max-width: toRem(1320);
 
 		box-shadow:
 			0 4px 4px 0 rgba(0, 0, 0, 0.3),

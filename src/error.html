@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"This Page Could Not Be Found"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <section class="error _first-section-bg">
+        <div class="error__bg _bg">
+          <img src="@img/firstscreen/firstscreen1-bg.jpg" alt="" loading="lazy">
+        </div>
+        <div class="error__container">
+          <div class="error__body">
+            <div class="error__404">404</div>
+            <h1 class="error__title title-h2">Deal guest. This Page Could Not Be Found</h1>
+            <div class="error__subtitle">The page you are looking for might have been removed had its name changed or is temporarily unavailable.</div>
+            <div class="error__button">
+              <a href="home.html" class="btn btn_bg-yellow">Go to homepage</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

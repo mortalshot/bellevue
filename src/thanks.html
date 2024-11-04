@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Thank you!"
+})
+
+<body class="_header-bg">
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      @@include('html/checkin-widget.htm',{
+      "class":""
+      })
+
+      <section class="thanks">
+        <div class="thanks__container">
+          <div class="thanks__body">
+            <div class="thanks__caption title-style1">Thank you!</div>
+            <h1 class="thanks__title title-h2">Thank you for your inquiry!</h1>
+            <h4 class="thanks__subtitle">Plan Your Stay with Us</h4>
+
+            <div class="thanks__promocode thanks-promocode">
+              <div class="thanks-promocode__text">Get 20% discount available on the website for your next stay! With promo code.</div>
+              <div class="thanks-promocode__promocode">HAPPY20</div>
+              <div class="thanks-promocode__button">
+                <button type="button" class="btn btn_bg-yellow">Copy code and book directly with advantages</button>
+              </div>
+              <div class="thanks-promocode__text">or</div>
+              <div class="thanks-promocode__home">
+                <a href="home.html" class="btn btn_bg-yellow">Go to homepage</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/widget-map.htm',{})
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

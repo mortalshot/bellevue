@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Restaurant PRIMAVERA"
+})
+
+<body class="">
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <section class="inner-first _first-section-bg">
+        <div class="inner-first__bg _bg">
+          <img src="@img/firstscreen/inner-first3.jpg" alt="" loading="lazy">
+        </div>
+
+        <div class="inner-first__container">
+          <div class="inner-first__body">
+            <div class="inner-first__text _content">
+              <h1 style="text-align: center;">Restaurant PRIMAVERA</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/checkin-widget.htm',{
+      "class":"firstscreen__checkin"
+      })
+
+      <section class="inner-contacts section-bg">
+        <div class="inner-contacts__container">
+          <div class="inner-contacts__row">
+            <div class="inner-contacts__left">
+              <div class="inner-contacts__text _content">
+                <p class="text-big">Restaurant PRIMAVERA is located on the ground floor of the hotel. This is also where we serve breakfast for the guests. Daily restaurant PRIMAVERA offers a range of Italian dishes cooked using traditional recipes from regional Italy. We offer pizza, pasta, appetisers and salads.</p>
+                <p></p>
+
+                <h3>Opening hours:</h3>
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-12 col-lg-6">
+                    <h4>Breakfast</h4>
+                    <p>Mon - Fr: 07:00 a.m. - 10:00 a.m. <br> Sat- Sun: 07:00 a.m.- 11:00 a.m.</p>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-12 col-lg-6">
+                    <h4>Lunch</h4>
+                    <p>Mon - Sun: 12:00 a.m. - 11:00 p.m.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inner-contacts__right">
+              <h3 class="inner-contacts__caption">Contacts:</h3>
+
+              <div class="contacts">
+                <div class="contacts__card">
+                  <div class="contacts__item">
+                    <a href="tel:+37167069000">
+                      <div class="contacts__icon">
+                        <svg class="icon">
+                          <use xlink:href="@img/icons/icons.svg#phone"></use>
+                        </svg>
+                      </div>
+                      <span>+371 67069000</span>
+                    </a>
+                  </div>
+                  <div class="contacts__item">
+                    <a href="mailto:wellness@bellevue.lv">
+                      <div class="contacts__icon">
+                        <svg class="icon">
+                          <use xlink:href="@img/icons/icons.svg#email"></use>
+                        </svg>
+                      </div>
+                      <span>wellness@bellevue.lv</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="inner-contacts__button">
+                  <a href="" class="btn btn_bg-yellow">Download pricelist</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery2">
+        <div class="gallery2__container">
+          <div class="gallery2__slider swiper">
+            <div class="gallery2__wrapper swiper-wrapper" data-gallery="">
+              <div data-src="@img/gallery/gallery-image4.jpg" class="gallery2__slide swiper-slide">
+                <div class="gallery2__image">
+                  <img src="@img/gallery/gallery-image4.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+              <div data-src="@img/gallery/gallery-image5.jpg" class="gallery2__slide swiper-slide">
+                <div class="gallery2__image">
+                  <img src="@img/gallery/gallery-image5.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+              <div data-src="@img/gallery/gallery-image3.jpg" class="gallery2__slide swiper-slide">
+                <div class="gallery2__image">
+                  <img src="@img/gallery/gallery-image3.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+              <div data-src="@img/gallery/gallery-image2.jpg" class="gallery2__slide swiper-slide">
+                <div class="gallery2__image">
+                  <img src="@img/gallery/gallery-image2.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+              <div data-src="@img/gallery/gallery-image1.jpg" class="gallery2__slide swiper-slide">
+                <div class="gallery2__image">
+                  <img src="@img/gallery/gallery-image1.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-arrows">
+              <button type="button" class="swiper-arrow swiper-arrow_prev">
+                <svg class="icon">
+                  <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                </svg>
+              </button>
+              <button type="button" class="swiper-arrow swiper-arrow_next">
+                <svg class="icon">
+                  <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery2__text _content">
+            <h2 class="title-h3">H2 heading goes here</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex magna, lacinia ac interdum sed, mattis sit amet lorem. Praesent eget mi vestibulum, sodales diam eget, imperdiet justo. Vivamus id lorem ut enim pellentesque efficitur. Ut rutrum nunc non ex mollis fermentum. Vivamus vel lorem massa. Aliquam tempor feugiat massa, sed pellentesque ex viverra eget. Integer vitae lorem feugiat leo suscipit ultrices at quis neque. Donec vulputate tempor mi at interdum. Nulla ac bibendum arcu. Mauris id sagittis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/features-tabs.htm',{})
+
+      @@include('html/widget-map.htm',{})
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

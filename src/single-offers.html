@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Special Offers Detailed"
+})
+
+<body class="">
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <section class="inner-first _first-section-bg">
+        <div class="inner-first__bg _bg">
+          <img src="@img/firstscreen/inner-first4.jpg" alt="" loading="lazy">
+        </div>
+
+        <div class="inner-first__container">
+          <div class="inner-first__body">
+            <div class="inner-first__text _content">
+              <h1 style="max-width: 733px;">Gift a Memorable Moments to Your Loved Ones</h1>
+            </div>
+
+            <div class="inner-first__button">
+              <a href="" class="btn btn_bg-yellow">Book now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/checkin-widget.htm',{
+      "class":"firstscreen__checkin"
+      })
+
+      <section class="family">
+        <div class="family__container">
+          <div class="family__row">
+            <div class="family__main">
+              <div class="family__heading" data-da=".family__slider, 833.98, 0">
+                <h2 class="family__title">Family offer</h2>
+                <div class="family__subtitle">Discover our exclusive Family Offer designed to create unforgettable memories. Enjoy a perfect getaway with these amazing benefits:</div>
+              </div>
+
+
+              <ul class="family__list">
+                <li><strong>1 Night in a Spacious Family Room:</strong> <br> Comfort and convenience for the whole family.</li>
+                <li><strong>Delicious Buffet Breakfast:</strong> <br> Start your day with a rich and varied breakfast spread.</li>
+                <li><strong>Course Lunch for Two at "Park" Restaurant**:</strong> <br> Savor a delightful meal in our renowned first-floor restaurant.</li>
+                <li><strong>Welcome Drink:</strong> <br> Refresh and relax with a complimentary welcome drink upon arrival.</li>
+                <li><strong>Complimentary WiFi:</strong> <br> Stay connected with free high-speed internet access.</li>
+                <li><strong>Fitness Room Access:</strong> <br> Keep up with your fitness routine in our well-equipped gym.</li>
+                <li><strong>Free Parking:</strong> <br> Enjoy hassle-free parking at our hotel.</li>
+              </ul>
+
+              <div class="family__prices family-prices">
+                <div class="family-prices__left">
+                  <div class="family-prices__caption">Special Prices:</div>
+                  <div class="offers-card__item">
+                    <span>1 Child (up to 13 years old):</span>
+                    <div class="offers-card__price">155 EUR</div>
+                  </div>
+
+                  <div class="offers-card__item">
+                    <span>2 Children** (up to 13 years old):</span>
+                    <div class="offers-card__price">175 EUR</div>
+                  </div>
+                </div>
+                <div class="family-prices__right">
+                  <div class="family-prices__button">
+                    <a href="" class="btn btn_bg-yellow">Book now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="family__slider swiper">
+              <div class="family__wrapper swiper-wrapper">
+                <div class="family__slide swiper-slide">
+                  <img src="@img/gallery/family-image1.jpg" alt="" loading="lazy">
+                </div>
+                <div class="family__slide swiper-slide">
+                  <img src="@img/gallery/family-image2.jpg" alt="" loading="lazy">
+                </div>
+                <div class="family__slide swiper-slide">
+                  <img src="@img/gallery/family-image3.jpg" alt="" loading="lazy">
+                </div>
+              </div>
+
+              <div class="swiper-arrows">
+                <button type="button" class="swiper-arrow swiper-arrow_prev">
+                  <svg class="icon">
+                    <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                  </svg>
+                </button>
+                <button type="button" class="swiper-arrow swiper-arrow_next">
+                  <svg class="icon">
+                    <use xlink:href="@img/icons/icons.svg#swiper-arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/special-offers.htm',{})
+
+      @@include('html/widget-map.htm',{})
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

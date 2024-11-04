@@ -50,14 +50,14 @@
 		}
 
 		&::after {
-			// top: toRem(8);
-			// left: toRem(7);
-			// width: toRem(10);
-			// flex: 0 0 toRem(10);
-			// height: toRem(10);
-			// background: url(../img/icons/check.svg) no-repeat center/contain;
-			// opacity: 0;
-			// transition: $transition ease all 0s;
+			top: toRem(3);
+			left: toRem(0);
+			width: toRem(14);
+			flex: 0 0 toRem(14);
+			height: toRem(14);
+			background: url(../img/icons/check.svg) no-repeat center/contain;
+			opacity: 0;
+			transition: $transition ease all 0s;
 		}
 
 		div {

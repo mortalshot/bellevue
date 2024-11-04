@@ -8,7 +8,7 @@
 //При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 //Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -28,21 +28,21 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	if (document.querySelector('.firstscreen__slider')) {
 		new Swiper('.firstscreen__slider', {
-			modules: [Pagination],
+			modules: [Pagination,  Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 800,
 
-			/*
+			
 			// Эффекты
-			effect: 'fade',
+			// effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			*/
+			
 
 			// Пагинация
 			pagination: {
@@ -65,7 +65,15 @@ function initSliders() {
 			*/
 			// События
 			on: {
-
+				init() {
+					this.el.addEventListener('mouseenter', () => {
+						this.autoplay.stop();
+					});
+		
+					this.el.addEventListener('mouseleave', () => {
+						this.autoplay.start();
+					});
+				}
 			}
 		});
 	}
@@ -208,10 +216,10 @@ function initSliders() {
 
 			// Брейкпоинты
 			breakpoints: {
-			/* 	1024: {
-					slidesPerView: 1.3,
-					spaceBetween: 0,
-				}, */
+				/* 	1024: {
+						slidesPerView: 1.3,
+						spaceBetween: 0,
+					}, */
 			},
 
 			// События
@@ -358,10 +366,10 @@ function initSliders() {
 				clickable: true,
 			}, */
 
-			/* navigation: {
+			navigation: {
 				prevEl: '.room-popup__slider .swiper-arrow_prev',
 				nextEl: '.room-popup__slider .swiper-arrow_next',
-			}, */
+			},
 
 			// Брейкпоинты
 			/* breakpoints: {
@@ -376,6 +384,153 @@ function initSliders() {
 
 			}
 		});
+	}
+
+	if (document.querySelector('.gallery2__slider')) {
+		new Swiper('.gallery2__slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			speed: 1200,
+			loop: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/* pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			}, */
+
+			navigation: {
+				prevEl: '.gallery2__slider .swiper-arrow_prev',
+				nextEl: '.gallery2__slider .swiper-arrow_next',
+			},
+
+			// Брейкпоинты
+			breakpoints: {
+				575: {
+					slidesPerView: 1.7,
+					spaceBetween: -210,
+				},
+			},
+
+			// События
+			on: {
+
+			}
+		});
+	}
+
+	if (document.querySelector('.widget-blog__slider')) {
+		new Swiper('.widget-blog__slider', {
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 1000,
+			autoHeight: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			pagination: {
+				el: '.widget-blog__slider .swiper-pagination',
+				type: 'fraction',
+			},
+
+			navigation: {
+				prevEl: '.widget-blog__slider .swiper-arrow_prev',
+				nextEl: '.widget-blog__slider .swiper-arrow_next',
+			},
+
+			// Брейкпоинты
+			breakpoints: {
+				834: {
+					direction: 'vertical',
+					slidesPerView: 2,
+					spaceBetween: 0,
+				},
+			},
+
+			// События
+			on: {
+
+			}
+		});
+	}
+
+	if (document.querySelector('.family__slider')) {
+		let currentWidth = window.innerWidth;
+		window.addEventListener('resize', function () {
+			if ((currentWidth < 834 && window.innerWidth >= 834) || (currentWidth >= 834 && window.innerWidth < 834)) {
+				location.reload();
+			}
+		});
+
+		if (window.innerWidth <= 834) {
+			new Swiper('.family__slider', {
+				modules: [Navigation],
+				observer: true,
+				observeParents: true,
+				slidesPerView: 1,
+				spaceBetween: 30,
+				speed: 1000,
+				loop: true,
+
+				/*
+				// Эффекты
+				effect: 'fade',
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: false,
+				},
+				*/
+
+				// Пагинация
+				/* pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				}, */
+
+				navigation: {
+					prevEl: '.family__slider .swiper-arrow_prev',
+					nextEl: '.family__slider .swiper-arrow_next',
+				},
+
+				// Брейкпоинты
+				// breakpoints: {
+				// 	575: {
+				// 		slidesPerView: 1.7,
+				// 		spaceBetween: -210,
+				// 	},
+				// },
+
+				// События
+				on: {
+
+				}
+			});
+		}
+
+
 	}
 }
 //Скролл на базе слайдера (по классу swiper scroll для оболочки слайдера)
