@@ -32,6 +32,7 @@ body::after {
 		right: toRem(10);
 		padding: toRem(10);
 		margin: toRem(-10);
+		outline: 0;
 
 		@media (any-hover: hover) {
 			&:hover {
@@ -87,8 +88,8 @@ body::after {
 	max-width: toRem(1320);
 	border-radius: toRem(2);
 	overflow: hidden;
-	@include adaptiveValue("padding-top", 56, 32, 0, 1380, 1024);
-	@include adaptiveValue("padding-bottom", 56, 32, 0, 1380, 1024);
+	@include adaptiveValue("padding-top", 41, 32, 0, 1380, 1024);
+	@include adaptiveValue("padding-bottom", 41, 32, 0, 1380, 1024);
 	@include adaptiveValue("padding-left", 32, 16);
 	@include adaptiveValue("padding-right", 32, 16);
 
@@ -104,6 +105,73 @@ body::after {
 		box-shadow:
 			0 4px 4px 0 rgba(0, 0, 0, 0.3),
 			0 8px 12px 6px rgba(0, 0, 0, 0.15);
+	}
+}
+
+.popup_question {
+	.popup__content {
+		padding: 0;
+		max-width: toRem(458);
+		border-radius: toRem(2);
+		overflow: hidden;
+		box-shadow:
+			0 4px 4px 0 rgba(0, 0, 0, 0.3),
+			0 8px 12px 6px rgba(0, 0, 0, 0.15);
+	}
+
+	.room-popup__form {
+		padding-top: toRem(40);
+		padding-bottom: toRem(64);
+		background: url(../img/rooms/popup-bg.jpg) no-repeat center/cover;
+		@include adaptiveValue("padding-left", 78, 20);
+		@include adaptiveValue("padding-right", 78, 20);
+	}
+
+	.row {
+		& > * {
+			&:not(:last-child) {
+				margin-bottom: toRem(16);
+			}
+		}
+	}
+
+	.input {
+		font-size: toRem(12);
+		text-transform: uppercase;
+	}
+
+	.checkbox__label {
+		font-size: toRem(12);
+	}
+
+	.btn {
+		width: 100%;
+	}
+}
+
+.popup_thanks {
+	.popup__content {
+		padding: toRem(28) toRem(20);
+		max-width: toRem(350);
+		background-color: #f3efdf;
+	}
+
+	.popup__text {
+		min-height: toRem(400);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.room-popup__heading {
+		flex: 1;
+	}
+
+	.room-popup__subcaption {
+		max-width: toRem(253);
+	}
+
+	.btn {
+		width: 100%;
 	}
 }
 

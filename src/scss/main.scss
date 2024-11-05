@@ -21,8 +21,12 @@
 
   // .inner-first__container
   &__container {
-    padding-top: calc(var(--header-height) + toRem(36));
-    padding-bottom: toRem(100);
+  }
+
+  // .inner-first__body
+  &__body {
+    padding-top: calc(var(--header-height) + toRem(36)) !important;
+    padding-bottom: toRem(100) !important;
     min-height: toRem(377);
     position: relative;
     z-index: 2;
@@ -33,10 +37,6 @@
     @media (max-width: $mobile) {
       @include adaptiveValue("padding-bottom", 100, 64, 0, 834, 375);
     }
-  }
-
-  // .inner-first__body
-  &__body {
   }
 
   // .inner-first__text
@@ -491,6 +491,10 @@
   @include adaptiveValue("padding-top", 80, 40);
   @include adaptiveValue("padding-bottom", 80, 40);
 
+  @media (max-width: $mobile) {
+    background-color: #f3efdf;
+  }
+
   & + section {
     margin-top: 0;
   }
@@ -620,15 +624,14 @@
         opacity: 1;
       }
     }
-
     @media (min-width: $mobile) and (max-width: $tablet) {
       transform: translateX(percent(-170, 420));
     }
     @media (max-width: $mobile) {
       @include adaptiveValue("padding-top", 36, 24, 0, 834, 375);
       @include adaptiveValue("padding-bottom", 36, 24, 0, 834, 375);
-      @include adaptiveValue("padding-left", 32, 20, 0, 834, 375);
-      @include adaptiveValue("padding-right", 32, 20, 0, 834, 375);
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -914,10 +917,6 @@
 
 // .features-tabs     ====================================================================================================
 .features-tabs {
-  max-width: toRem(1920);
-  margin-left: auto;
-  margin-right: auto;
-
   .tabs__navigation {
     position: relative;
 
@@ -1007,6 +1006,9 @@
       @media (min-width: $tablet) {
         @include adaptiveValue("top", 488, 360, 0, 1920, 1024);
         @include adaptiveValue("left", 300, 30, 0, 1920, 1380);
+      }
+      @media (min-width: toEm(1920)) {
+        @include adaptiveValue("left", 945, 300, 0, 3200, 1920);
       }
       @media (max-width: $tablet) {
         right: toRem(30);
@@ -1174,7 +1176,7 @@
   // .widget-map__bg
   &__bg {
     display: flex;
-    
+
     img {
       @media (max-width: $mobileM) {
         aspect-ratio: 375 / 265;
@@ -1534,6 +1536,10 @@
   // .room-main__title
   &__title {
     @include adaptiveValue("font-size", 40, 32, 0, 1024, 834);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(24);
+    }
   }
 
   // .room-main__items
@@ -1930,7 +1936,7 @@
       top: 0;
       transform: translateX(100%);
       z-index: -1;
-      @include adaptiveValue("right", 510, 430, 0, 1024, 834);
+      @include adaptiveValue("right", 510, 450, 0, 1024, 834);
     }
     @media (min-width: $tablet) {
       right: toRem(470);
@@ -1976,6 +1982,15 @@
   // .inner-contacts__right
   &__right {
     position: relative;
+
+    @media (max-width: $mobile) {
+      &._mob-bg {
+        background-color: #f3efdf;
+        padding: toRem(32) toRem(24);
+        border-radius: toRem(2);
+        overflow: hidden;
+      }
+    }
   }
 
   // .inner-contacts__caption
@@ -1993,13 +2008,17 @@
     row-gap: toRem(32);
 
     @media (max-width: $mobile) {
-      justify-content: flex-start;
       row-gap: toRem(20);
     }
   }
 
   .contacts {
-    display: inline-grid;
+    @media (min-width: $mobile) {
+      display: inline-grid;
+    }
+    @media (max-width: $mobile) {
+      row-gap: toRem(28);
+    }
 
     // .contacts__card
     &__card {
@@ -2402,6 +2421,15 @@
       &:not(:last-child) {
         margin-bottom: toRem(16);
       }
+    }
+  }
+
+  .iti {
+    font-size: toRem(12);
+
+    input {
+      padding: toRem(8);
+      outline: 0;
     }
   }
 
@@ -2918,9 +2946,9 @@
   // .widget-blog__slider
   &__slider {
     min-height: toRem(1);
-    max-width: toRem(1920);
-    margin-left: auto;
-    margin-right: auto;
+    // max-width: toRem(1920);
+    // margin-left: auto;
+    // margin-right: auto;
     position: relative;
 
     @media (max-width: $mobile) {
@@ -3401,20 +3429,23 @@
       &__title {
         font-family: $fontSecond;
         padding: toRem(18) toRem(30);
+        @include adaptiveValue("padding-left", 30, 16, 0, 834, 375);
+        @include adaptiveValue("padding-right", 64, 48, 0, 834, 375);
 
         &::before,
         &::after {
           right: toRem(30);
+          @include adaptiveValue("right", 30, 16, 0, 834, 375);
         }
       }
 
       // .spollers__body
       &__body {
-        padding-left: toRem(30);
-        padding-right: toRem(30);
         padding-bottom: toRem(30);
         font-size: toRem(16);
         line-height: math.div(24, 16);
+        @include adaptiveValue("padding-left", 30, 16, 0, 834, 375);
+        @include adaptiveValue("padding-right", 30, 16, 0, 834, 375);
       }
     }
   }

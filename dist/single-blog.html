@@ -10,7 +10,8 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241105145200">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.1/build/css/intlTelInput.css?_v=20241105162333">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241105162333">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -460,8 +461,127 @@
 				<img src="img/icons/above.svg" alt="" loading="lazy">
 			</a>
 		</div>
+		<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Popup content
+			</div>
+		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241105145200"></script>
+</div> -->
+
+		<div id="cookiePolicy" aria-hidden="true" class="popup popup_cookie popup_bottom">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__text">
+						<div class="cookie">
+							<div class="cookie__bg">
+								<img src="img/policy-bg.jpg" alt="" loading="lazy">
+							</div>
+
+							<div class="cookie__content">
+								<div class="cookie__text _content">
+									<p>We use cookies to improve your browsing experience and for our marketing. By continuing to use this website you thereby accept the use of cookies. Read more about cookies and how you can disable them.</p>
+								</div>
+
+								<div class="cookie__actions">
+									<div class="cookie__button">
+										<button data-close type="button" class="btn btn_bg-yellow">Ok, hide it</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="question" aria-hidden="true" class="popup popup_question">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg class="icon">
+							<use xlink:href="img/icons/icons.svg#close"></use>
+						</svg>
+					</button>
+
+					<div class="popup__text">
+						<form action="#" class="room-popup__form">
+							<div class="room-popup__heading">
+								<div class="room-popup__caption title-h4">Ask a question</div>
+							</div>
+
+							<div class="row">
+								<div class="col-12">
+									<div class="room-popup__item form-item">
+										<input type="text" name="question-name" placeholder="Name Surname *" class="input input_bg-gray" required>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="room-popup__item form-item">
+										<input type="text" name="question-phone" placeholder="Contact Phone Number *" class="input input_bg-gray input_phone" required>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="room-popup__item form-item">
+										<input type="email" name="question-email" placeholder="E-mail" class="input input_bg-gray">
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="room-popup__item form-item">
+										<div class="room-popup__note">* - obligatory fields</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="form__privacy">
+										<div class="checkbox checkbox_gray">
+											<label>
+												<input type="checkbox" name="in-stock" value="даю согласие" class="checkbox__input" checked="">
+												<span class="checkbox__label">
+													<div>I have read and accept the <a href="">privacy policy</a> and tems and conditions of Bellevue Hotel</div>
+												</span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="form__submit">
+										<button type="button" data-popup="#thanks" class="btn btn_bg-yellow">Send</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="thanks" aria-hidden="true" class="popup popup_thanks">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__text">
+						<div class="room-popup__heading">
+							<div class="room-popup__caption title-h4">Thank you for request</div>
+							<div class="room-popup__subcaption">Mēs kontaktēsimies ar Jums,
+								lai precizētu pieejamību
+								un visu nepieciešamo informāciju</div>
+						</div>
+
+						<button data-close type="button" class="btn btn_bg-yellow"> Close </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.1/build/js/intlTelInput.min.js?_v=20241105162333"></script>
+	<script src="js/app.min.js?_v=20241105162333"></script>
 </body>
 
 </html>

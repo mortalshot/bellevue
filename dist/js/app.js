@@ -5371,10 +5371,7 @@
                 slidesPerView: 1,
                 spaceBetween: 0,
                 speed: 800,
-                autoplay: {
-                    delay: 3e3,
-                    disableOnInteraction: false
-                },
+                loop: true,
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true
@@ -5382,11 +5379,9 @@
                 on: {
                     init() {
                         this.el.addEventListener("mouseenter", (() => {
-                            console.log("mouseenter");
                             this.autoplay.stop();
                         }));
                         this.el.addEventListener("mouseleave", (() => {
-                            console.log("mouseenter");
                             this.autoplay.start();
                         }));
                     }
@@ -7516,6 +7511,14 @@ PERFORMANCE OF THIS SOFTWARE.
         if (checkinWidget) window.addEventListener("scroll", (function() {
             const rect = checkinWidget.getBoundingClientRect();
             if (rect.top === 0) checkinWidget.classList.add("_sticky"); else checkinWidget.classList.remove("_sticky");
+        }));
+        const phone = document.querySelectorAll(".input_phone");
+        if (phone.length > 0) phone.forEach((element => {
+            window.intlTelInput(element, {
+                loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.1/build/js/utils.js",
+                initialCountry: "ru",
+                separateDialCode: true
+            });
         }));
         window.addEventListener("DOMContentLoaded", (function() {
             const firstscreen = document.querySelector("._first-section-bg");

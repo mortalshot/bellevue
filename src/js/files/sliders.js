@@ -34,14 +34,15 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 800,
+			loop: true,
 
 			
 			// Эффекты
 			// effect: 'fade',
-			autoplay: {
+			/* autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
-			},
+			}, */
 			
 
 			// Пагинация
@@ -67,12 +68,10 @@ function initSliders() {
 			on: {
 				init() {
 					this.el.addEventListener('mouseenter', () => {
-						console.log('mouseenter');
 						this.autoplay.stop();
 					});
 		
 					this.el.addEventListener('mouseleave', () => {
-						console.log('mouseenter');
 						this.autoplay.start();
 					});
 				}

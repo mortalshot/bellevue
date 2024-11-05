@@ -47,6 +47,10 @@
 			height: toRem(14);
 			background-color: $White;
 			transition: $transition ease all 0s;
+
+			.checkbox_gray & {
+				background-color: #eaeaea;
+			}
 		}
 
 		&::after {

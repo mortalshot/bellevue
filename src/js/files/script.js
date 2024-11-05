@@ -76,6 +76,17 @@ if (checkinWidget) {
   });
 }
 
+const phone = document.querySelectorAll('.input_phone');
+if (phone.length > 0) {
+  phone.forEach(element => {
+    let iti = window.intlTelInput(element, {
+      loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.1/build/js/utils.js",
+      initialCountry: "ru",
+      separateDialCode: true
+    })
+  });
+}
+
 window.addEventListener('DOMContentLoaded', function () {
   const firstscreen = document.querySelector('._first-section-bg');
   setTimeout(() => {

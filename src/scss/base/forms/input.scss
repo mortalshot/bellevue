@@ -37,6 +37,13 @@ textarea {
 		min-height: toRem(45);
 		padding: toRem(8) toRem(16);
 	}
+
+	// .input_bg-gray
+	&_bg-gray {
+		background-color: #eaeaea;
+		min-height: toRem(45);
+		padding: toRem(8) toRem(16);
+	}
 }
 
 .input[placeholder]:not([data-placeholder-nohiden]) {
