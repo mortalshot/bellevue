@@ -28,21 +28,21 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	if (document.querySelector('.firstscreen__slider')) {
 		new Swiper('.firstscreen__slider', {
-			modules: [Pagination, Autoplay],
+			modules: [Pagination,  Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 800,
 
-
+			
 			// Эффекты
 			// effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-
+			
 
 			// Пагинация
 			pagination: {
@@ -67,10 +67,12 @@ function initSliders() {
 			on: {
 				init() {
 					this.el.addEventListener('mouseenter', () => {
+						console.log('mouseenter');
 						this.autoplay.stop();
 					});
-
+		
 					this.el.addEventListener('mouseleave', () => {
+						console.log('mouseenter');
 						this.autoplay.start();
 					});
 				}
