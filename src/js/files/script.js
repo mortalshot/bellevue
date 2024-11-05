@@ -82,7 +82,16 @@ window.addEventListener('DOMContentLoaded', function () {
     if (firstscreen) {
       showHeaderHeight();
     }
-  }, 400);
+  }, 300);
+})
+
+window.addEventListener('load', function () {
+  const firstscreen = document.querySelector('._first-section-bg');
+  setTimeout(() => {
+    if (firstscreen) {
+      showHeaderHeight();
+    }
+  }, 300);
 })
 
 window.addEventListener('resize', function () {
@@ -92,3 +101,4 @@ window.addEventListener('resize', function () {
     showHeaderHeight();
   }
 });
+

@@ -5382,11 +5382,9 @@
                 on: {
                     init() {
                         this.el.addEventListener("mouseenter", (() => {
-                            console.log("mouseenter");
                             this.autoplay.stop();
                         }));
                         this.el.addEventListener("mouseleave", (() => {
-                            console.log("mouseenter");
                             this.autoplay.start();
                         }));
                     }
@@ -7521,7 +7519,13 @@ PERFORMANCE OF THIS SOFTWARE.
             const firstscreen = document.querySelector("._first-section-bg");
             setTimeout((() => {
                 if (firstscreen) showHeaderHeight();
-            }), 400);
+            }), 300);
+        }));
+        window.addEventListener("load", (function() {
+            const firstscreen = document.querySelector("._first-section-bg");
+            setTimeout((() => {
+                if (firstscreen) showHeaderHeight();
+            }), 300);
         }));
         window.addEventListener("resize", (function() {
             const firstscreen = document.querySelector("._first-section-bg");
