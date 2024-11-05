@@ -67,10 +67,12 @@ function initSliders() {
 			on: {
 				init() {
 					this.el.addEventListener('mouseenter', () => {
+						console.log('mouseenter');
 						this.autoplay.stop();
 					});
 		
 					this.el.addEventListener('mouseleave', () => {
+						console.log('mouseenter');
 						this.autoplay.start();
 					});
 				}
