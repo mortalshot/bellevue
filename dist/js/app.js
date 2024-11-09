@@ -7528,9 +7528,12 @@ PERFORMANCE OF THIS SOFTWARE.
         }));
         window.addEventListener("load", (function() {
             const firstscreen = document.querySelector("._first-section-bg");
-            setTimeout((() => {
-                if (firstscreen) showHeaderHeight();
-            }), 300);
+            if (firstscreen) {
+                showHeaderHeight();
+                setTimeout((() => {
+                    showHeaderHeight();
+                }), 400);
+            }
         }));
         window.addEventListener("resize", (function() {
             const firstscreen = document.querySelector("._first-section-bg");

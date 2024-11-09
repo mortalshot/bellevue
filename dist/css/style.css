@@ -2064,8 +2064,7 @@ video {
 .checkin-widget {
   color: #fff;
   position: sticky;
-  z-index: 6;
-  top: 0
+  z-index: 6
 }
 .checkin-widget._active {
   z-index: 10
@@ -2686,7 +2685,6 @@ video {
   flex: 1;
   min-width: 0;
   position: relative;
-  aspect-ratio: 848/534;
   border-radius: .125rem
 }
 .room-popup__slider .swiper-arrows {
@@ -2708,6 +2706,9 @@ video {
 }
 .room-popup__button .btn {
   min-width: 6.8125rem
+}
+.room-popup__slide {
+  aspect-ratio: 848/534
 }
 .room-popup__slide img {
   width: 100%;
@@ -4834,6 +4835,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .footer__main {
     grid-template-columns: 1fr 47.3484848485%
   }
+  .checkin-widget {
+    top: 0
+  }
   .checkin-widget .spollers__title {
     display: none
   }
@@ -5615,6 +5619,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .footer-bottom__right {
     flex: 0 0 50%
+  }
+  .checkin-widget {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0
   }
   .checkin-widget__form {
     flex-wrap: wrap

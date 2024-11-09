@@ -217,7 +217,16 @@
   color: $White;
   position: sticky;
   z-index: 6;
-  top: 0;
+
+  @media (min-width:$tablet){
+     top: 0; 
+  }
+  @media (max-width:$tablet){
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   .spollers__title {
     @media (min-width: $tablet) {
@@ -2320,7 +2329,6 @@
     flex: 1;
     min-width: 0;
     position: relative;
-    aspect-ratio: 848 / 534;
     border-radius: toRem(2);
 
     &:not(:first-child) {
@@ -2364,6 +2372,8 @@
 
   // .room-popup__slide
   &__slide {
+    aspect-ratio: 848 / 534;
+
     img {
       width: 100%;
       height: 100%;
