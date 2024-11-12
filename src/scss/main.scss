@@ -216,17 +216,8 @@
 .checkin-widget {
   color: $White;
   position: sticky;
+  top: 0;
   z-index: 6;
-
-  @media (min-width:$tablet){
-     top: 0; 
-  }
-  @media (max-width:$tablet){
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
   .spollers__title {
     @media (min-width: $tablet) {
@@ -561,6 +552,22 @@
   // .special-offers__slide
   &__slide {
   }
+
+  &.special-offers_bg {
+    background-color: #f3efdf;
+
+    .offers-card__body {
+      @media (min-width: $mobile) {
+        background-color: $White;
+      }
+    }
+
+    & + .widget-map {
+      .map-card__body {
+        background-color: $White !important;
+      }
+    }
+  }
 }
 
 .offers-card {
@@ -623,18 +630,12 @@
     border-radius: toRem(2);
 
     @media (min-width: $tablet) {
-      transform: translateX(percent(-164, 420));
-      opacity: 0;
-      transition: $transition ease opacity 0s;
       @include adaptiveValue("padding-left", 36, 16, 0, 1320, 1024);
       @include adaptiveValue("padding-right", 36, 16, 0, 1320, 1024);
-
-      .swiper-slide-active & {
-        opacity: 1;
-      }
     }
-    @media (min-width: $mobile) and (max-width: $tablet) {
-      transform: translateX(percent(-170, 420));
+    @media (min-width: $mobile) {
+      margin-left: percent(-164, 420);
+      margin-right: percent(164, 420);
     }
     @media (max-width: $mobile) {
       @include adaptiveValue("padding-top", 36, 24, 0, 834, 375);
@@ -859,24 +860,12 @@
 
   @media (min-width: $tablet) {
     grid-template-columns: percent(600, 1024) 1fr;
-    transform: scale(0.8);
-    opacity: 0.3;
-    transition: 0.8s ease all 0s;
   }
   @media (min-width: toEm(1280)) {
     grid-template-columns: percent(850, 1380) 1fr;
   }
   @media (min-width: toEm(1440)) {
-    transform: scale(0.7);
     grid-template-columns: percent(945, 1380) 1fr;
-  }
-
-  .swiper-slide-active & {
-    opacity: 1;
-    transform: scale(1);
-
-    .rooms-card__preview img {
-    }
   }
 
   // .rooms-card__preview
@@ -1011,6 +1000,7 @@
 
     .swiper-arrows {
       position: absolute;
+      z-index: 2;
 
       @media (min-width: $tablet) {
         @include adaptiveValue("top", 488, 360, 0, 1920, 1024);
@@ -1032,6 +1022,13 @@
 
   // .features-tabs__slide
   &__slide {
+    background-color: $White;
+    position: relative;
+
+    &.swiper-slide-active {
+      z-index: 1;
+    }
+
     @media (min-width: $tablet) {
       display: flex;
       align-items: flex-start;
@@ -1129,9 +1126,9 @@
 
     &:last-child {
       @media (min-width: $tablet) {
-        left: 0;
+        // left: percent(311, 493);
         bottom: 0;
-        transform: translate(percent(-311, 493), 0);
+        @include adaptiveValue("left", -311, -71, 0, 1920, 1024);
       }
       @media (min-width: $mobile) {
         position: absolute;
@@ -1141,10 +1138,10 @@
         @include adaptiveValue("border-width", 30, 20, 0, 1920, 1024);
       }
       @media (min-width: $mobile) and (max-width: $tablet) {
-        top: 0;
         right: toRem(10);
         max-width: percent(270, 774);
-        transform: translateY(percent(-126, 270));
+        @include adaptiveValue("top", -100, -64, 0, 1024, 834);
+        // transform: translateY(percent(-126, 270));
       }
       @media (max-width: $mobile) {
         display: none;
@@ -2183,11 +2180,23 @@
   &__card {
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    @media (any-hover: hover) {
+      transition: $transition ease opacity 0s;
+      &:hover {
+        .conference-room__preview img {
+          transform: scale(1.15) translateY(-15px);
+          transform-origin: top;
+        }
+      }
+    }
   }
 
   // .conference-room__preview
   &__preview {
     aspect-ratio: 420 / 250;
+    overflow: hidden;
 
     @media (max-width: $mobileM) {
       aspect-ratio: 335 / 215;
@@ -2197,6 +2206,9 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+      transform: scale(1) translateY(0);
+      transform-origin: 50% 16%;
+      transition: 2s ease all 0s;
     }
   }
 
@@ -2241,6 +2253,16 @@
   &__button {
     .btn {
       width: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
@@ -2688,8 +2710,9 @@
 
   // .text-image__caption
   &__caption {
-    max-width: toRem(420);
-    line-height: math.div(46, 32);
+    line-height: math.div(30, 20);
+    @include adaptiveValue("max-width", 420, 307, 0, 834, 375);
+    @include adaptiveValue("font-size", 32, 20, 0, 834, 375);
   }
 
   // .text-image__text
@@ -2929,10 +2952,6 @@
 
 // .widget-blog     ====================================================================================================
 .widget-blog {
-  background-color: #f3efdf;
-  @include adaptiveValue("padding-top", 80, 40);
-  @include adaptiveValue("padding-bottom", 80, 40);
-
   // .widget-blog__container
   &__container {
     @media (max-width: $mobile) {
@@ -3574,4 +3593,90 @@
   }
 }
 
+.email {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // .email__heading
+  &__heading {
+    background-color: #f3efdf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiveValue("padding-top", 32, 16);
+    @include adaptiveValue("padding-bottom", 32, 16);
+  }
+
+  // .email__container
+  &__container {
+  }
+
+  // .email__logo
+  &__logo {
+    @include adaptiveValue("max-width", 200, 140);
+
+    a {
+      @media (any-hover: hover) {
+        transition: $transition ease opacity 0s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  // .email__body
+  &__body {
+    flex: 1;
+    @include adaptiveValue("padding-top", 52, 40);
+    @include adaptiveValue("padding-bottom", 72, 40);
+  }
+
+  // .email__footer
+  &__footer {
+    position: relative;
+    color: $White;
+    text-align: center;
+    @include adaptiveValue("padding-top", 60, 40);
+    @include adaptiveValue("padding-bottom", 60, 40);
+  }
+
+  // .email__bg
+  &__bg {
+    img {
+      z-index: -1;
+    }
+  }
+
+  // .email__contacts
+  &__contacts {
+    gap: 0;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 48, 24);
+    }
+
+    .contacts__item_big {
+      font-weight: 500;
+      font-size: toRem(20);
+      line-height: math.div(24, 20);
+
+      &:not(:last-child) {
+        margin-bottom: toRem(12);
+      }
+    }
+  }
+
+  .socials {
+    display: grid;
+    justify-content: center;
+    gap: toRem(12);
+
+    .socials__items {
+      justify-content: center;
+    }
+  }
+}
 //====================================================================================================

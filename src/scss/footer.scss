@@ -124,6 +124,10 @@
       }
     }
   }
+
+  .iti__country-name {
+    color: var(--iti-dialcode-color);
+  }
 }
 
 .footer-subscribe {
@@ -312,6 +316,23 @@
 
       &::placeholder {
         text-transform: uppercase;
+      }
+    }
+
+    .iti {
+      font-size: toRem(12);
+    }
+
+    .iti__search-input {
+      padding: toRem(8);
+      outline: 0;
+    }
+
+    .iti__arrow {
+      border-top-color: $White;
+
+      &.iti__arrow--up {
+        border-bottom-color: $White;
       }
     }
 

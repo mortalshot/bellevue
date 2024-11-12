@@ -1829,6 +1829,9 @@ video {
   font-size: .8125rem;
   line-height: 1.2307692308
 }
+.footer .iti__country-name {
+  color: var(--iti-dialcode-color)
+}
 .footer-subscribe__text > *:not(:first-child) {
   margin-top: .5rem
 }
@@ -1917,6 +1920,19 @@ video {
 }
 .footer-request__row .input::placeholder {
   text-transform: uppercase
+}
+.footer-request__row .iti {
+  font-size: .75rem
+}
+.footer-request__row .iti__search-input {
+  padding: .5rem;
+  outline: 0
+}
+.footer-request__row .iti__arrow {
+  border-top-color: #fff
+}
+.footer-request__row .iti__arrow.iti__arrow--up {
+  border-bottom-color: #fff
 }
 .footer-request__row .form__submit {
   margin-top: .5rem
@@ -2064,6 +2080,7 @@ video {
 .checkin-widget {
   color: #fff;
   position: sticky;
+  top: 0;
   z-index: 6
 }
 .checkin-widget._active {
@@ -2157,6 +2174,12 @@ video {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem
+}
+.special-offers.special-offers_bg {
+  background-color: #f3efdf
+}
+.special-offers.special-offers_bg + .widget-map .map-card__body {
+  background-color: #fff!important
 }
 .offers-card__image {
   position: relative;
@@ -2261,11 +2284,6 @@ video {
   display: grid;
   gap: 1.875rem
 }
-.swiper-slide-active .rooms-card {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1)
-}
 .rooms-card__preview img {
   width: 100%;
   height: 100%;
@@ -2295,7 +2313,15 @@ video {
   position: relative
 }
 .features-tabs__slider .swiper-arrows {
-  position: absolute
+  position: absolute;
+  z-index: 2
+}
+.features-tabs__slide {
+  background-color: #fff;
+  position: relative
+}
+.features-tabs__slide.swiper-slide-active {
+  z-index: 1
 }
 .features-tabs__title:not(:last-child) {
   margin-bottom: 1.25rem
@@ -2603,16 +2629,23 @@ video {
 }
 .conference-room__card {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  position: relative
 }
 .conference-room__preview {
-  aspect-ratio: 420/250
+  aspect-ratio: 420/250;
+  overflow: hidden
 }
 .conference-room__preview img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  -webkit-transform: scale(1) translateY(0);
+  transform: scale(1) translateY(0);
+  -webkit-transform-origin: 50% 16%;
+  transform-origin: 50% 16%;
+  transition: 2s ease all 0s
 }
 .conference-room__body {
   flex: 1;
@@ -2638,6 +2671,15 @@ video {
 }
 .conference-room__button .btn {
   width: 100%
+}
+.conference-room__button .btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%
 }
 .conference-room__popup .popup__content {
   background: url(../img/rooms/popup-bg.jpg) no-repeat center/cover
@@ -2859,8 +2901,7 @@ video {
   row-gap: 1.5rem
 }
 .text-image__caption {
-  max-width: 26.25rem;
-  line-height: 1.4375
+  line-height: 1.5
 }
 .text-image__image {
   overflow: hidden
@@ -2933,9 +2974,6 @@ video {
 }
 .family-prices__caption:not(:last-child) {
   margin-bottom: .25rem
-}
-.widget-blog {
-  background-color: #f3efdf
 }
 .widget-blog__slider {
   min-height: .0625rem;
@@ -3195,6 +3233,48 @@ video {
 .thanks-promocode__home .btn {
   width: 100%;
   max-width: 13.875rem
+}
+.email {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+.email__heading {
+  background-color: #f3efdf;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.email__body {
+  flex: 1
+}
+.email__footer {
+  position: relative;
+  color: #fff;
+  text-align: center
+}
+.email__bg img {
+  z-index: -1
+}
+.email__contacts {
+  gap: 0
+}
+.email__contacts .contacts__item_big {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2
+}
+.email__contacts .contacts__item_big:not(:last-child) {
+  margin-bottom: .75rem
+}
+.email .socials {
+  display: grid;
+  justify-content: center;
+  gap: .75rem
+}
+.email .socials .socials__items {
+  justify-content: center
 }
 .swiper {
   overflow: hidden
@@ -4293,6 +4373,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .additional__value {
     font-size: 1.125rem
   }
+  .text-image__caption {
+    max-width: 26.25rem
+  }
+  .text-image__caption {
+    font-size: 2rem
+  }
   .family__heading:not(:last-child) {
     margin-bottom: 2.25rem
   }
@@ -4372,6 +4458,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     align-items: flex-end;
     justify-content: space-between
   }
+  .special-offers.special-offers_bg .offers-card__body {
+    background-color: #fff
+  }
   .offers-card {
     display: grid;
     align-items: center;
@@ -4386,6 +4475,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .offers-card__image {
     aspect-ratio: 525/696
+  }
+  .offers-card__body {
+    margin-left: -39.0476190476%;
+    margin-right: 39.0476190476%
   }
   .features-tabs .tabs__content {
     padding-top: 4.5rem
@@ -4835,9 +4928,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .footer__main {
     grid-template-columns: 1fr 47.3484848485%
   }
-  .checkin-widget {
-    top: 0
-  }
   .checkin-widget .spollers__title {
     display: none
   }
@@ -4872,15 +4962,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .swiper-slide-active .offers-card__caption {
     opacity: 0
   }
-  .offers-card__body {
-    -webkit-transform: translateX(-39.0476190476%);
-    transform: translateX(-39.0476190476%);
-    opacity: 0;
-    transition: .3s ease opacity 0s
-  }
-  .swiper-slide-active .offers-card__body {
-    opacity: 1
-  }
   .rooms-suites__heading {
     grid-template-columns: 1fr 54.0909090909%
   }
@@ -4892,11 +4973,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     align-items: center
   }
   .rooms-card {
-    grid-template-columns: 58.59375% 1fr;
-    -webkit-transform: scale(.8);
-    transform: scale(.8);
-    opacity: .3;
-    transition: .8s ease all 0s
+    grid-template-columns: 58.59375% 1fr
   }
   .rooms-card__body {
     padding-top: 5rem;
@@ -4924,10 +5001,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     transform: translateX(-100%)
   }
   .features-tabs__image:last-child {
-    left: 0;
-    bottom: 0;
-    -webkit-transform: translate(-63.0831643002%,0);
-    transform: translate(-63.0831643002%,0)
+    bottom: 0
   }
   .widget-map {
     aspect-ratio: 1024/620
@@ -5040,6 +5114,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .features-tabs__body {
     padding-top: 5rem
+  }
+  .features-tabs__image:last-child {
+    left: -19.4375rem
   }
 }
 @media (min-width:63.99875em) and (min-width:86.25em) {
@@ -5343,12 +5420,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     align-items: center;
     gap: 1rem
   }
-  .widget-blog {
-    padding-top: 5rem
-  }
-  .widget-blog {
-    padding-bottom: 5rem
-  }
   .widget-contacts__button .btn {
     min-width: 12.625rem
   }
@@ -5400,6 +5471,30 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .error__subtitle {
     font-size: 1.25rem
   }
+  .email__heading {
+    padding-top: 2rem
+  }
+  .email__heading {
+    padding-bottom: 2rem
+  }
+  .email__logo {
+    max-width: 12.5rem
+  }
+  .email__body {
+    padding-top: 3.25rem
+  }
+  .email__body {
+    padding-bottom: 4.5rem
+  }
+  .email__footer {
+    padding-top: 3.75rem
+  }
+  .email__footer {
+    padding-bottom: 3.75rem
+  }
+  .email__contacts:not(:last-child) {
+    margin-bottom: 3rem
+  }
 }
 @media (min-width:86.25em) and (min-width:120em) {
   .inner-contacts::before {
@@ -5444,8 +5539,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 50.78125%
   }
   .rooms-card {
-    -webkit-transform: scale(.7);
-    transform: scale(.7);
     grid-template-columns: 68.4782608696% 1fr
   }
 }
@@ -5619,12 +5712,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .footer-bottom__right {
     flex: 0 0 50%
-  }
-  .checkin-widget {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0
   }
   .checkin-widget__form {
     flex-wrap: wrap
@@ -6391,6 +6478,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .gallery2__slider:not(:last-child) {
     margin-bottom: 1.75rem
   }
+  .text-image__caption {
+    max-width: 19.1875rem
+  }
+  .text-image__caption {
+    font-size: 1.25rem
+  }
   .family__heading:not(:last-child) {
     margin-bottom: 1.25rem
   }
@@ -6405,12 +6498,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .family-prices {
     padding-right: 1.25rem
-  }
-  .widget-blog {
-    padding-top: 2.5rem
-  }
-  .widget-blog {
-    padding-bottom: 2.5rem
   }
   .error__body {
     padding-top: 2.5rem
@@ -6451,6 +6538,30 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .thanks-promocode__home:not(:first-child) {
     margin-top: 1rem
+  }
+  .email__heading {
+    padding-top: 1rem
+  }
+  .email__heading {
+    padding-bottom: 1rem
+  }
+  .email__logo {
+    max-width: 8.75rem
+  }
+  .email__body {
+    padding-top: 2.5rem
+  }
+  .email__body {
+    padding-bottom: 2.5rem
+  }
+  .email__footer {
+    padding-top: 2.5rem
+  }
+  .email__footer {
+    padding-bottom: 2.5rem
+  }
+  .email__contacts:not(:last-child) {
+    margin-bottom: 1.5rem
   }
 }
 @media (min-width:23.4375em) and (max-width:52.125em) {
@@ -6565,6 +6676,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .additional__value {
     font-size: clamp(.875rem ,.670751634rem + .871459695vw ,1.125rem)
+  }
+  .text-image__caption {
+    max-width: clamp(19.1875rem ,13.4174836601rem + 24.6187363834vw ,26.25rem)
+  }
+  .text-image__caption {
+    font-size: clamp(1.25rem ,.637254902rem + 2.614379085vw ,2rem)
   }
   .family__heading:not(:last-child) {
     margin-bottom: clamp(1.25rem ,.4330065359rem + 3.48583878vw ,2.25rem)
@@ -6993,12 +7110,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .family__list li {
     font-size: clamp(.875rem ,.8050373134rem + .2985074627vw ,1.0625rem)
   }
-  .widget-blog {
-    padding-top: clamp(2.5rem ,1.5671641791rem + 3.9800995025vw ,5rem)
-  }
-  .widget-blog {
-    padding-bottom: clamp(2.5rem ,1.5671641791rem + 3.9800995025vw ,5rem)
-  }
   .error__body {
     padding-top: clamp(2.5rem ,1.1007462687rem + 5.9701492537vw ,6.25rem)
   }
@@ -7013,6 +7124,30 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .error__subtitle {
     font-size: clamp(.875rem ,.7350746269rem + .5970149254vw ,1.25rem)
+  }
+  .email__heading {
+    padding-top: clamp(1rem ,.6268656716rem + 1.592039801vw ,2rem)
+  }
+  .email__heading {
+    padding-bottom: clamp(1rem ,.6268656716rem + 1.592039801vw ,2rem)
+  }
+  .email__logo {
+    max-width: clamp(8.75rem ,7.3507462687rem + 5.9701492537vw ,12.5rem)
+  }
+  .email__body {
+    padding-top: clamp(2.5rem ,2.2201492537rem + 1.1940298507vw ,3.25rem)
+  }
+  .email__body {
+    padding-bottom: clamp(2.5rem ,1.7537313433rem + 3.184079602vw ,4.5rem)
+  }
+  .email__footer {
+    padding-top: clamp(2.5rem ,2.0335820896rem + 1.9900497512vw ,3.75rem)
+  }
+  .email__footer {
+    padding-bottom: clamp(2.5rem ,2.0335820896rem + 1.9900497512vw ,3.75rem)
+  }
+  .email__contacts:not(:last-child) {
+    margin-bottom: clamp(1.5rem ,.9402985075rem + 2.3880597015vw ,3rem)
   }
 }
 @media (min-width:23.4375em) and (max-width:23.4375em) {
@@ -7132,6 +7267,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .features-tabs__body {
     padding-top: 1.5rem
+  }
+  .features-tabs__image:last-child {
+    left: -4.4375rem
   }
   .room-main__items {
     margin-top: -10.625rem
@@ -7269,19 +7407,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     opacity: 0;
     transition: .3s ease all 0s
   }
-  .offers-card__body {
-    -webkit-transform: translateX(-40.4761904762%);
-    transform: translateX(-40.4761904762%)
-  }
   .features-tabs__image:first-child {
     max-width: 71.5762273902%
   }
   .features-tabs__image:last-child {
-    top: 0;
     right: .625rem;
-    max-width: 34.8837209302%;
-    -webkit-transform: translateY(-46.6666666667%);
-    transform: translateY(-46.6666666667%)
+    max-width: 34.8837209302%
   }
   .conference-room__heading {
     grid-template-columns: 1fr 9.625rem
@@ -7416,6 +7547,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .features-tabs__body {
     padding-top: clamp(1.5rem ,-2.5rem + 6.25vw ,5rem)
   }
+  .features-tabs__image:last-child {
+    left: clamp(-19.4375rem ,12.7053571429rem + -26.7857142857vw ,-4.4375rem)
+  }
 }
 @media (min-width:63.99875em) and (min-width:86.25em) and (max-width:120em) {
   .features-tabs__slider .swiper-arrows {
@@ -7467,6 +7601,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @media (min-width:52.12375em) and (min-width:64em) and (max-width:120em) {
   .features-tabs__image:last-child {
     border-width: clamp(1.25rem ,.5357142857rem + 1.1160714286vw ,1.875rem)
+  }
+}
+@media (min-width:52.12375em) and (max-width:63.99875em) and (min-width:64em) {
+  .features-tabs__image:last-child {
+    top: -6.25rem
+  }
+}
+@media (min-width:52.12375em) and (max-width:63.99875em) and (min-width:52.125em) and (max-width:64em) {
+  .features-tabs__image:last-child {
+    top: clamp(-6.25rem ,5.8763157895rem + -18.9473684211vw ,-4rem)
+  }
+}
+@media (min-width:52.12375em) and (max-width:63.99875em) and (max-width:52.125em) {
+  .features-tabs__image:last-child {
+    top: -4rem
   }
 }
 @media (min-width:35.93625em) and (min-width:52.125em) and (max-width:120em) {
@@ -7767,6 +7916,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-text-decoration: underline from-font;
     text-decoration: underline from-font
   }
+  .conference-room__card {
+    transition: .3s ease opacity 0s
+  }
+  .conference-room__card:hover .conference-room__preview img {
+    -webkit-transform: scale(1.15) translateY(-15px);
+    transform: scale(1.15) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top
+  }
   .gallery2__slide.swiper-slide-active:hover {
     opacity: 1
   }
@@ -7779,5 +7937,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .widget-contacts__contact:hover span {
     -webkit-text-decoration: underline from-font;
     text-decoration: underline from-font
+  }
+  .email__logo a {
+    transition: .3s ease opacity 0s
+  }
+  .email__logo a:hover {
+    opacity: .7
   }
 }

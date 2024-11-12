@@ -81,7 +81,7 @@ if (phone.length > 0) {
   phone.forEach(element => {
     let iti = window.intlTelInput(element, {
       loadUtilsOnInit: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.1/build/js/utils.js",
-      initialCountry: "ru",
+      initialCountry: "lv",
       separateDialCode: true
     })
   });

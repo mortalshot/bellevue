@@ -8,7 +8,7 @@
 //При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 //Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Parallax } from 'swiper/modules';
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -81,13 +81,14 @@ function initSliders() {
 
 	if (document.querySelector('.special-offers__slider')) {
 		new Swiper('.special-offers__slider', {
-			modules: [Navigation],
+			modules: [Navigation, Parallax],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 30,
 			speed: 800,
 			loop: true,
+			parallax: true,
 
 			/*
 			// Эффекты
@@ -134,13 +135,14 @@ function initSliders() {
 
 	if (document.querySelector('.rooms-suites__slider')) {
 		new Swiper('.rooms-suites__slider', {
-			modules: [Navigation],
+			modules: [Navigation, Parallax],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 30,
 			speed: 1000,
 			loop: true,
+			parallax: true,
 
 			/*
 			// Эффекты
@@ -187,13 +189,14 @@ function initSliders() {
 
 	if (document.querySelector('.features-tabs__slider')) {
 		new Swiper('.features-tabs__slider', {
-			modules: [Navigation],
+			modules: [Navigation, Parallax],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 30,
+			spaceBetween: 150,
 			speed: 1000,
 			loop: true,
+			parallax: true,
 
 			/*
 			// Эффекты
