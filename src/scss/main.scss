@@ -237,6 +237,7 @@
     .checkin-widget__body {
       opacity: 1;
       z-index: 11;
+      pointer-events: all;
     }
   }
 
@@ -283,6 +284,7 @@
       background: url(../img/firstscreen/checkin-bg_tabl.jpg) no-repeat center/cover;
       opacity: 0;
       transition: $transition ease all 0s;
+      pointer-events: none;
       @include adaptiveValue("padding-left", math.div($containerPadding, 2), 20, 0, 834, 375);
       @include adaptiveValue("padding-right", math.div($containerPadding, 2), 20, 0, 834, 375);
     }
