@@ -392,7 +392,7 @@ function initSliders() {
 
 	if (document.querySelector('.gallery2__slider')) {
 		new Swiper('.gallery2__slider', {
-			modules: [Navigation],
+			modules: [Navigation, Parallax],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,

@@ -1798,6 +1798,14 @@
   &__slide {
     border-radius: toRem(2);
     overflow: hidden;
+
+    @media (any-hover: hover) {
+      transition: $transition ease all 0s !important;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
   }
 
   .room-main__actions {
@@ -2184,12 +2192,16 @@
     flex-direction: column;
     position: relative;
 
-    @media (any-hover: hover) {
-      transition: $transition ease opacity 0s;
-      &:hover {
-        .conference-room__preview img {
+    @media (min-width: $mobile) {
+      @media (any-hover: hover) {
+        transition: 0.5s ease transform 0s;
+        &:hover {
+          transform: scale(1.02);
+
+          /* .conference-room__preview img {
           transform: scale(1.15) translateY(-15px);
           transform-origin: top;
+        } */
         }
       }
     }
@@ -2208,9 +2220,9 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
-      transform: scale(1) translateY(0);
-      transform-origin: 50% 16%;
-      transition: 2s ease all 0s;
+      // transform: scale(1) translateY(0);
+      // transform-origin: 50% 16%;
+      // transition: 2s ease all 0s;
     }
   }
 

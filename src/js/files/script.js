@@ -87,6 +87,28 @@ if (phone.length > 0) {
   });
 }
 
+document.addEventListener('scroll', function () {
+  const elements = document.querySelectorAll('._to-upper');
+
+  elements.forEach(element => {
+    if (isElementInViewport(element)) {
+      element.classList.add('_active');
+    }
+  });
+});
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const elementHeight = el.clientHeight;
+
+  return (
+    rect.bottom >= 0 &&
+    rect.top <= windowHeight &&
+    (rect.top + elementHeight * 0.1) <= windowHeight
+  );
+}
+
 window.addEventListener('DOMContentLoaded', function () {
   const firstscreen = document.querySelector('._first-section-bg');
   setTimeout(() => {
@@ -100,7 +122,7 @@ window.addEventListener('load', function () {
   const firstscreen = document.querySelector('._first-section-bg');
   if (firstscreen) {
     showHeaderHeight();
-    
+
     setTimeout(() => {
       showHeaderHeight();
     }, 400);

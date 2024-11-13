@@ -1426,6 +1426,15 @@ video {
 .shake-animation {
   display: inline-block
 }
+._to-upper > div {
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  transition: 2s ease transform 0s
+}
+._to-upper._active > div {
+  -webkit-transform: translateY(0);
+  transform: translateY(0)
+}
 [data-gallery] [data-src] {
   cursor: pointer
 }
@@ -2641,12 +2650,7 @@ video {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
-  -webkit-transform: scale(1) translateY(0);
-  transform: scale(1) translateY(0);
-  -webkit-transform-origin: 50% 16%;
-  transform-origin: 50% 16%;
-  transition: 2s ease all 0s
+  object-fit: cover
 }
 .conference-room__body {
   flex: 1;
@@ -4826,6 +4830,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .thanks__caption {
     margin-bottom: -3.5rem
+  }
+}
+@media (min-width:52.12375em) and (any-hover:hover) {
+  .conference-room__card {
+    transition: .5s ease transform 0s
+  }
+  .conference-room__card:hover {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02)
   }
 }
 @media (min-width:52.12375em) and (min-width:52.12375em) {
@@ -7914,18 +7927,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-text-decoration: underline from-font;
     text-decoration: underline from-font
   }
+  .gallery__slide {
+    transition: .3s ease all 0s!important
+  }
+  .gallery__slide:hover {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02)
+  }
   .contacts-card__contact a:hover span {
     -webkit-text-decoration: underline from-font;
     text-decoration: underline from-font
-  }
-  .conference-room__card {
-    transition: .3s ease opacity 0s
-  }
-  .conference-room__card:hover .conference-room__preview img {
-    -webkit-transform: scale(1.15) translateY(-15px);
-    transform: scale(1.15) translateY(-15px);
-    -webkit-transform-origin: top;
-    transform-origin: top
   }
   .gallery2__slide.swiper-slide-active:hover {
     opacity: 1

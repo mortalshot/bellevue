@@ -5627,7 +5627,7 @@
                 on: {}
             });
             if (document.querySelector(".gallery2__slider")) new swiper_core_Swiper(".gallery2__slider", {
-                modules: [ Navigation ],
+                modules: [ Navigation, Parallax ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
@@ -7612,6 +7612,18 @@ PERFORMANCE OF THIS SOFTWARE.
                 separateDialCode: true
             });
         }));
+        document.addEventListener("scroll", (function() {
+            const elements = document.querySelectorAll("._to-upper");
+            elements.forEach((element => {
+                if (isElementInViewport(element)) element.classList.add("_active");
+            }));
+        }));
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const elementHeight = el.clientHeight;
+            return rect.bottom >= 0 && rect.top <= windowHeight && rect.top + elementHeight * .1 <= windowHeight;
+        }
         window.addEventListener("DOMContentLoaded", (function() {
             const firstscreen = document.querySelector("._first-section-bg");
             setTimeout((() => {
