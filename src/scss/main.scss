@@ -1483,6 +1483,13 @@
   &__body {
     width: 100%;
 
+    @media (any-hover: hover) {
+      transition: $transition ease transform 0s;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
     @media (min-width: $mobile) {
       padding: toRem(32) toRem(36);
       background-color: var(--item-color);
@@ -1511,6 +1518,16 @@
 
   // .room-card__button
   &__button {
+    a {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -1582,9 +1599,9 @@
     }
     &:nth-child(2) {
       @media (min-width: $mobile) {
+        @include adaptiveValue("margin-top", -130, -100, 0, 1024, 834);
         border-top: toRem(20) solid $White;
         border-right: toRem(20) solid $White;
-        @include adaptiveValue("margin-top", -130, -100, 0, 1024, 834);
       }
       @media (min-width: $tablet) {
         @include adaptiveValue("margin-top", -220, -130, 0, 1320, 1024);
@@ -1595,10 +1612,13 @@
     }
     &:nth-child(3) {
       @media (min-width: $mobile) {
-        border: toRem(20) solid $White;
-        border-bottom: 0;
         margin-left: percent(335, 834);
         @include adaptiveValue("margin-top", -206, -187, 0, 1024, 834);
+
+        ._to-upper div {
+          border: toRem(20) solid $White;
+          border-bottom: 0;
+        }
       }
       @media (min-width: $tablet) {
         margin-left: percent(480, 1320);
@@ -2658,10 +2678,19 @@
     width: 100%;
     height: 100%;
 
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: 1s ease transform 0s;
     }
   }
 
@@ -2878,10 +2907,13 @@
         margin-left: auto;
       }
       &:nth-child(2) {
-        border-top: toRem(20) solid $White;
-        border-right: toRem(20) solid $White;
-        border-bottom: toRem(20) solid $White;
         z-index: 1;
+
+        & > ._to-upper div {
+          border-top: toRem(20) solid $White;
+          border-right: toRem(20) solid $White;
+          border-bottom: toRem(20) solid $White;
+        }
 
         @media (min-width: $mobile) {
           max-width: percent(350, 615);
@@ -2893,12 +2925,15 @@
         }
       }
       &:nth-child(3) {
-        border-top: toRem(20) solid $White;
-        border-right: toRem(20) solid $White;
         max-width: toRem(398);
         max-width: percent(398, 615);
         margin-left: auto;
         margin-right: toRem(89);
+
+        & > ._to-upper div {
+          border-top: toRem(20) solid $White;
+          border-right: toRem(20) solid $White;
+        }
 
         @media (min-width: $mobile) {
           @include adaptiveValue("margin-right", 40, 20, 0, 1024, 834);
@@ -3106,15 +3141,26 @@
 
 .blog-card {
   height: 100%;
+  position: relative;
 
   @media (min-width: $mobile) {
     display: flex;
+
+    @media (any-hover: hover) {
+      transition: $transition ease opacity 0s;
+      &:hover {
+        .blog-card__preview img {
+          transform: scale(1.05);
+        }
+      }
+    }
   }
 
   // .blog-card__preview
   &__preview {
     flex: 0 0 50%;
     position: relative;
+    overflow: hidden;
 
     @media (max-width: $mobile) {
       aspect-ratio: 335 / 240;
@@ -3127,6 +3173,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: 1s ease transform 0s;
     }
   }
 
@@ -3169,6 +3216,17 @@
 
   // .blog-card__button
   &__button {
+    a {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 

@@ -175,6 +175,28 @@ body::after {
 	}
 }
 
+.popup_message {
+	.popup__content {
+		padding: 0;
+		max-width: toRem(882);
+	}
+
+	.map-card {
+		text-align: center;
+
+		@media (min-width: $mobileM) {
+			grid-template-columns: percent(320, 882) 1fr;
+			max-width: initial;
+		}
+	}
+
+	.map-card__text {
+		&:not(:last-child) {
+			margin-bottom: toRem(16);
+		}
+	}
+}
+
 .cookie {
 	position: relative;
 

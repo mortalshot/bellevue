@@ -293,12 +293,12 @@ section {
 ._to-upper {
   & > div {
     transform: translateY(50%);
-    transition: 2s ease transform 0s;
   }
 
   &._active {
     & > div {
       transform: translateY(0);
+      transition: 2s ease transform 0s;
     }
   }
 }

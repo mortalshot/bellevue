@@ -31,7 +31,7 @@ if (document.querySelector('#checkin') && document.querySelector('#checkout')) {
 			setTimeout(() => {
 				document.querySelector('#checkin').closest('.datepicker').classList.remove('_active');
 			}, 1);
-		}
+		},
 	});
 
 	const checkout = datepicker('#checkout', {

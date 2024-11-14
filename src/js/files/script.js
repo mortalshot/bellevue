@@ -87,15 +87,17 @@ if (phone.length > 0) {
   });
 }
 
-document.addEventListener('scroll', function () {
-  const elements = document.querySelectorAll('._to-upper');
+setTimeout(() => {
+  document.addEventListener('scroll', function () {
+    const elements = document.querySelectorAll('._to-upper');
 
-  elements.forEach(element => {
-    if (isElementInViewport(element)) {
-      element.classList.add('_active');
-    }
+    elements.forEach(element => {
+      if (isElementInViewport(element)) {
+        element.classList.add('_active');
+      }
+    });
   });
-});
+}, 500);
 
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -116,6 +118,16 @@ window.addEventListener('DOMContentLoaded', function () {
       showHeaderHeight();
     }
   }, 300);
+
+  setTimeout(() => {
+    const elements = document.querySelectorAll('._to-upper');
+
+    elements.forEach(element => {
+      if (isElementInViewport(element)) {
+        element.classList.add('_active');
+      }
+    });
+  }, 500);
 })
 
 window.addEventListener('load', function () {

@@ -7612,12 +7612,14 @@ PERFORMANCE OF THIS SOFTWARE.
                 separateDialCode: true
             });
         }));
-        document.addEventListener("scroll", (function() {
-            const elements = document.querySelectorAll("._to-upper");
-            elements.forEach((element => {
-                if (isElementInViewport(element)) element.classList.add("_active");
+        setTimeout((() => {
+            document.addEventListener("scroll", (function() {
+                const elements = document.querySelectorAll("._to-upper");
+                elements.forEach((element => {
+                    if (isElementInViewport(element)) element.classList.add("_active");
+                }));
             }));
-        }));
+        }), 500);
         function isElementInViewport(el) {
             const rect = el.getBoundingClientRect();
             const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -7629,6 +7631,12 @@ PERFORMANCE OF THIS SOFTWARE.
             setTimeout((() => {
                 if (firstscreen) showHeaderHeight();
             }), 300);
+            setTimeout((() => {
+                const elements = document.querySelectorAll("._to-upper");
+                elements.forEach((element => {
+                    if (isElementInViewport(element)) element.classList.add("_active");
+                }));
+            }), 500);
         }));
         window.addEventListener("load", (function() {
             const firstscreen = document.querySelector("._first-section-bg");
