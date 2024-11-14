@@ -33,7 +33,16 @@ if (document.querySelector('#checkin') && document.querySelector('#checkout')) {
 			}, 1);
 		},
 		onShow: function () {
-			console.log(this.calendarContainer.classList.add('qweqweqwe'));
+			const container = this.calendarContainer;
+			const rect = container.getBoundingClientRect();
+			const offsetBottom = window.innerHeight - rect.bottom;
+			console.log(offsetBottom);
+
+			if (offsetBottom <= 0) {
+				container.classList.add('to-top');
+			} else {
+				container.classList.remove('to-top');
+			}
 		}
 	});
 

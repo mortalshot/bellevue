@@ -528,6 +528,10 @@ textarea.input {
 .qs-datepicker-container:after {
   bottom: 0
 }
+.qs-datepicker-container.to-top {
+  -webkit-transform: translateY(calc(-100% - 3.125rem));
+  transform: translateY(calc(-100% - 3.125rem))
+}
 .qs-datepicker-container * {
   box-sizing: border-box
 }
@@ -5404,6 +5408,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .service__items {
     grid-template-columns: repeat(6,1fr)
   }
+  .gallery {
+    margin-top: 5rem
+  }
+  .gallery {
+    margin-bottom: 5rem
+  }
   .additional {
     padding-top: 4rem
   }
@@ -6491,6 +6501,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .service__caption {
     font-size: .6875rem
   }
+  .gallery {
+    margin-top: 2.5rem
+  }
+  .gallery {
+    margin-bottom: 2.5rem
+  }
   .additional {
     padding-top: 2.5rem
   }
@@ -7131,6 +7147,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .service {
     padding-bottom: clamp(2.5rem ,1.5671641791rem + 3.9800995025vw ,5rem)
+  }
+  .gallery {
+    margin-top: clamp(2.5rem ,1.5671641791rem + 3.9800995025vw ,5rem)
+  }
+  .gallery {
+    margin-bottom: clamp(2.5rem ,1.5671641791rem + 3.9800995025vw ,5rem)
   }
   .additional {
     padding-top: clamp(2.5rem ,1.9402985075rem + 2.3880597015vw ,4rem)

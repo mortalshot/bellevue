@@ -87,6 +87,10 @@
 	&:after {
 		bottom: 0;
 	}
+
+	&.to-top {
+		transform: translateY(calc(-100% - toRem(50)));
+	}
 }
 .qs-datepicker-container * {
 	-webkit-box-sizing: border-box;

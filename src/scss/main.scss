@@ -1765,6 +1765,9 @@
 
 // .gallery     ====================================================================================================
 .gallery {
+  @include adaptiveValue("margin-top", 80, 40);
+  @include adaptiveValue("margin-bottom", 80, 40);
+  
   // .gallery__container
   &__container {
   }
