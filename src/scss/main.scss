@@ -3149,6 +3149,10 @@
     @media (any-hover: hover) {
       transition: $transition ease opacity 0s;
       &:hover {
+        .blog-card__preview {
+          flex: 0 0 53%;
+        }
+
         .blog-card__preview img {
           transform: scale(1.05);
         }
@@ -3161,6 +3165,7 @@
     flex: 0 0 50%;
     position: relative;
     overflow: hidden;
+    transition: 1s ease all 0s;
 
     @media (max-width: $mobile) {
       aspect-ratio: 335 / 240;

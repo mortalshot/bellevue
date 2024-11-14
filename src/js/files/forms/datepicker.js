@@ -32,6 +32,9 @@ if (document.querySelector('#checkin') && document.querySelector('#checkout')) {
 				document.querySelector('#checkin').closest('.datepicker').classList.remove('_active');
 			}, 1);
 		},
+		onShow: function () {
+			console.log(this.calendarContainer.classList.add('qweqweqwe'));
+		}
 	});
 
 	const checkout = datepicker('#checkout', {

@@ -3024,7 +3024,8 @@ video {
 .blog-card__preview {
   flex: 0 0 50%;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+  transition: 1s ease all 0s
 }
 .blog-card__preview img {
   position: absolute;
@@ -4883,6 +4884,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .blog-card {
     transition: .3s ease opacity 0s
+  }
+  .blog-card:hover .blog-card__preview {
+    flex: 0 0 53%
   }
   .blog-card:hover .blog-card__preview img {
     -webkit-transform: scale(1.05);

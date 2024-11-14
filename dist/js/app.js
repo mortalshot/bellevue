@@ -1612,6 +1612,9 @@
                     setTimeout((() => {
                         document.querySelector("#checkin").closest(".datepicker").classList.remove("_active");
                     }), 1);
+                },
+                onShow: function() {
+                    console.log(this.calendarContainer.classList.add("qweqweqwe"));
                 }
             });
             const checkout = datepicker_min("#checkout", {
